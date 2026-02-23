@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fisioterapia en Suiza — Webinar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Fraunces:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --granate:       #8B1A1A;
+  --granate-deep:  #6B1212;
+  --granate-light: #A82020;
+  --crema:         #F5EDD8;
+  --crema-suave:   rgba(245, 237, 216, 0.75);
+  --crema-dimmed:  rgba(245, 237, 216, 0.45);
+  --crema-border:  rgba(245, 237, 216, 0.18);
+  --blanco:        #FFFFFF;
+  --oro:           #C9A84C;
+  --oro-suave:     rgba(201, 168, 76, 0.20);
+  --overlay-dark:  rgba(80, 8, 8, 0.45);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: #3a0a0a;
+  overflow: hidden;
+  cursor: default;
+}
+
+/* ─── SLIDE BASE ──────────────────────────────────── */
+.slide {
+  position: absolute;
+  inset: 0;
+  background: var(--granate);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 68px 96px 88px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+  overflow: hidden;
+}
+.slide.active { opacity: 1; pointer-events: all; }
+
+/* Grain texture overlay */
+.slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.slide > * { position: relative; z-index: 1; }
+
+/* Slide variants */
+.slide.dark-deep    { background: var(--granate-deep); }
+.slide.light-accent { background: var(--crema); }
+.slide.light-accent h1, .slide.light-accent h2,
+.slide.light-accent p, .slide.light-accent .label { color: var(--granate-deep); }
+.slide.light-accent h2 { color: rgba(107, 18, 18, 0.65); }
+.slide.light-accent .card { background: rgba(107,18,18,0.07); border-color: rgba(107,18,18,0.15); }
+.slide.light-accent .card h3 { color: var(--granate-deep); }
+.slide.light-accent .card p  { color: rgba(107,18,18,0.6); }
+.slide.light-accent .divider { background: var(--granate-deep); opacity: 0.3; }
+
+/* ─── LOGO MARK (top right) ───────────────────────── */
+.logo-mark {
+  position: absolute;
+  top: 28px;
+  right: 40px;
+  width: 80px;
+  height: auto;
+  z-index: 10;
+  opacity: 0.9;
+  object-fit: contain;
+}
+
+/* ─── TYPOGRAPHY ──────────────────────────────────── */
+h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(48px, 6.2vw, 84px);
+  font-weight: 800;
+  color: var(--crema);
+  line-height: 1.0;
+  letter-spacing: -1px;
+  max-width: 960px;
+}
+h1 em {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--crema);
+  opacity: 0.8;
+}
+h1 .oro { color: var(--oro); }
+
+h2 {
+  font-size: clamp(17px, 2vw, 24px);
+  font-weight: 400;
+  color: var(--crema-dimmed);
+  margin-top: 16px;
+  max-width: 800px;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--crema-dimmed);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--oro);
+  flex-shrink: 0;
+}
+
+/* ─── DIVIDER ─────────────────────────────────────── */
+.divider {
+  width: 48px;
+  height: 2px;
+  background: var(--oro);
+  margin: 22px auto;
+  border-radius: 2px;
+}
+
+/* ─── NUMBER HERO ─────────────────────────────────── */
+.numero-hero {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(80px, 12vw, 140px);
+  font-weight: 900;
+  line-height: 0.9;
+  color: var(--crema);
+  letter-spacing: -4px;
+}
+.numero-hero .unidad {
+  font-size: 0.42em;
+  font-weight: 500;
+  letter-spacing: -1px;
+  opacity: 0.7;
+  vertical-align: baseline;
+}
+.numero-hero.accent { color: var(--oro); }
+.numero-hero.small {
+  font-size: clamp(52px, 7vw, 80px);
+}
+
+/* ─── CARDS ───────────────────────────────────────── */
+.card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--crema-border);
+  border-radius: 14px;
+  padding: 28px 32px;
+  text-align: left;
+  backdrop-filter: blur(4px);
+}
+.card h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--crema);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.card p {
+  font-size: 16px;
+  color: var(--crema-dimmed);
+  line-height: 1.6;
+}
+.card .card-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 900;
+  color: var(--oro);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.card.oro-border { border-top: 2px solid var(--oro); }
+.card.crema-border { border-left: 3px solid var(--crema-suave); }
+.card.warn-border { border-left: 3px solid var(--oro); }
+
+/* ─── GRIDS ───────────────────────────────────────── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  width: 100%;
+  max-width: 1040px;
+  margin-top: 28px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 1140px;
+  margin-top: 28px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── COMPARATIVA ─────────────────────────────────── */
+.comparativa {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 940px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--crema-border);
+}
+.comp-col { padding: 30px 36px; }
+.comp-col.left {
+  background: rgba(0,0,0,0.25);
+  border-right: 1px solid var(--crema-border);
+}
+.comp-col.right {
+  background: rgba(255,255,255,0.05);
+}
+.comp-header {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--crema-border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.comp-col.left  .comp-header { color: var(--crema-dimmed); }
+.comp-col.right .comp-header { color: var(--crema-suave); }
+.comp-row {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(245,237,216,0.08);
+  font-size: 17px;
+  color: var(--crema-suave);
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+}
+.comp-row:last-child { border-bottom: none; }
+.comp-row.highlight {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--crema);
+}
+.comp-col.left  .comp-row.highlight { color: rgba(245,237,216,0.5); text-decoration: line-through; }
+.comp-col.right .comp-row.highlight { color: var(--oro); }
+
+/* ─── PASOS NUMERADOS ─────────────────────────────── */
+.pasos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 880px;
+  margin-top: 28px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.paso {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 26px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--crema-border);
+  border-radius: 12px;
+  transition: background 0.2s;
+  text-align: left;
+}
+.paso:hover { background: rgba(255,255,255,0.09); }
+.paso-num {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: var(--oro-suave);
+  border: 1px solid rgba(201,168,76,0.4);
+  color: var(--oro);
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.paso h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--crema);
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+.paso p {
+  font-size: 15px;
+  color: var(--crema-dimmed);
+  line-height: 1.5;
+}
+.paso .badge-tiempo {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--oro);
+  background: var(--oro-suave);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 100px;
+  padding: 2px 10px;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+/* ─── CHECKLIST ───────────────────────────────────── */
+.checklist {
+  list-style: none;
+  text-align: left;
+  width: 100%;
+  max-width: 720px;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--crema-border);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--crema-suave);
+  line-height: 1.45;
+}
+.checklist li:last-child { border-bottom: none; }
+.checklist li .check {
+  color: var(--oro);
+  font-size: 19px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ─── STAT PILLS ──────────────────────────────────── */
+.stat-row {
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.stat-pill {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid var(--crema-border);
+  border-radius: 100px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.stat-pill .val {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--crema);
+}
+.stat-pill .desc {
+  font-size: 15px;
+  color: var(--crema-dimmed);
+  line-height: 1.3;
+  max-width: 130px;
+}
+
+/* ─── BADGE IDIOMAS ───────────────────────────────── */
+.idioma-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--crema-border);
+  border-top: 2px solid var(--oro);
+  border-radius: 14px;
+  padding: 30px 26px;
+  text-align: center;
+}
+.idioma-flag { font-size: 40px; margin-bottom: 12px; }
+.idioma-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--crema);
+  margin-bottom: 8px;
+}
+.idioma-card p {
+  font-size: 16px;
+  color: var(--crema-dimmed);
+  line-height: 1.5;
+}
+
+/* ─── ALERTA BOX ──────────────────────────────────── */
+.alerta {
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.35);
+  border-radius: 12px;
+  padding: 18px 24px;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 880px;
+  text-align: left;
+}
+.alerta-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.alerta-text {
+  font-size: 16px;
+  color: var(--crema-suave);
+  line-height: 1.5;
+}
+.alerta-text strong { color: var(--oro); }
+
+/* ─── QUOTE ──────────────────────────────────────── */
+.quote-block {
+  border-left: 3px solid var(--oro);
+  padding: 20px 30px;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 760px;
+  background: rgba(201,168,76,0.06);
+  border-radius: 0 12px 12px 0;
+}
+.quote-block p {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: clamp(19px, 2.2vw, 26px);
+  color: var(--crema-suave);
+  line-height: 1.5;
+  font-weight: 300;
+}
+.quote-block .quote-author {
+  font-family: 'Outfit', sans-serif;
+  font-style: normal;
+  font-size: 15px;
+  color: var(--crema-dimmed);
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* ─── DATA LIST ──────────────────────────────────── */
+.data-list {
+  list-style: none;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 20px;
+  text-align: left;
+}
+.data-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--crema-border);
+  font-size: 16px;
+  color: var(--crema-suave);
+}
+.data-list li:last-child { border-bottom: none; }
+.data-list li .data-label { font-weight: 400; }
+.data-list li .data-value { font-weight: 700; color: var(--crema); text-align: right; }
+.data-list li .data-value.oro { color: var(--oro); }
+
+/* ─── ICON ROW ───────────────────────────────────── */
+.icon-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.icon-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--crema-border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+}
+.icon-item .icon-emoji { font-size: 24px; margin-bottom: 10px; }
+.icon-item h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--crema);
+  margin-bottom: 5px;
+}
+.icon-item p {
+  font-size: 15px;
+  color: var(--crema-dimmed);
+  line-height: 1.5;
+}
+
+/* ─── CTA BUTTON ──────────────────────────────────── */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--crema);
+  color: var(--granate-deep);
+  font-family: 'Outfit', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  padding: 18px 40px;
+  border-radius: 100px;
+  text-decoration: none;
+  margin-top: 30px;
+  letter-spacing: 0.2px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.3);
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 36px rgba(0,0,0,0.4);
+}
+.cta-btn .arrow {
+  font-size: 20px;
+  transition: transform 0.2s;
+}
+.cta-btn:hover .arrow { transform: translateX(4px); }
+.cta-secondary {
+  font-size: 15px;
+  color: var(--crema-dimmed);
+  margin-top: 14px;
+  display: block;
+}
+
+/* ─── SCROLLABLE SLIDE ────────────────────────────── */
+.slide.scrollable {
+  overflow-y: auto;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+/* ─── ANIMATIONS ──────────────────────────────────── */
+.anim {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.anim.visible { opacity: 1; transform: none; }
+
+/* Animation type classes (applied by JS from data-animation) */
+.anim.a-from-left  { transform: translateX(-40px); }
+.anim.a-from-right { transform: translateX(40px); }
+.anim.a-zoom       { transform: scale(0.92); }
+
+/* ─── BREATHING SLIDES ───────────────────────────── */
+.slide.breathing {
+  background-size: cover;
+  background-position: center;
+  padding: 60px;
+}
+.slide.breathing::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(80,8,8,0.65), rgba(40,4,4,0.5));
+  z-index: 1;
+}
+.slide.breathing > * { z-index: 2; }
+.slide.breathing .breathing-text {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(30px, 4.5vw, 60px);
+  color: var(--crema);
+  line-height: 1.35;
+  max-width: 820px;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.5);
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+.slide.breathing .breathing-text.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─── PROGRESS BAR ────────────────────────────────── */
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: var(--oro);
+  transition: width 0.4s ease;
+  z-index: 100;
+}
+
+/* ─── NAVIGATION DOTS ─────────────────────────────── */
+.nav-dots {
+  position: fixed;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  z-index: 100;
+  background: rgba(60,0,0,0.6);
+  backdrop-filter: blur(10px);
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--crema-border);
+}
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(245,237,216,0.25);
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s;
+}
+.dot.active {
+  background: var(--crema);
+  transform: scale(1.5);
+}
+.nav-hint {
+  position: fixed;
+  bottom: 24px; right: 32px;
+  font-size: 11px;
+  color: rgba(245,237,216,0.25);
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slide { padding: 50px 28px 70px; }
+  .grid-2, .grid-3, .comparativa { grid-template-columns: 1fr; }
+  h1 { font-size: clamp(34px, 8vw, 52px); }
+  .icon-row { flex-direction: column; }
+}
+@media (max-height: 700px) {
+  .slide { padding: 50px 80px 68px; gap: 8px; }
+  h1 { font-size: clamp(32px, 4.5vw, 56px); }
+}
+</style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progress"></div>
+
+<!-- LOGO: ../assets/logo.png -->
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 1 — PORTADA
+══════════════════════════════════════════ -->
+<div class="slide dark-deep active" id="s1">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Webinar · Fisio en Suiza</div>
+  <h1 class="anim">Fisioterapia<br>en <span class="oro">Suiza</span></h1>
+  <div class="divider anim"></div>
+  <h2 class="anim" style="font-family:'Fraunces',serif; font-style:italic; font-size:clamp(18px,2.2vw,26px); color:var(--crema-suave); font-weight:300;">Da el gran salto profesional y económico</h2>
+  <div class="stat-row anim">
+    <div class="stat-pill">
+      <span class="val">35+</span>
+      <span class="desc">fisios ya en Suiza</span>
+    </div>
+    <div class="stat-pill">
+      <span class="val" style="color:var(--oro);">×4</span>
+      <span class="desc">salario vs España</span>
+    </div>
+    <div class="stat-pill">
+      <span class="val">Rafa &amp; Paula</span>
+      <span class="desc">fisioterapeutas en activo</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 2 — QUIÉNES SOMOS
+══════════════════════════════════════════ -->
+<div class="slide" id="s2">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Quiénes somos</div>
+  <h1 class="anim">Rafa <em>&amp;</em> Paula</h1>
+  <div class="divider anim"></div>
+  <div class="grid-2 anim" style="margin-top:22px;">
+    <div class="card crema-border">
+      <h3>Rafa</h3>
+      <p>Fisioterapeuta. De Cádiz. Vive en Francia desde 2019. Fundó Fisio en Francia en 2021. Amplió el proyecto a Suiza junto a Paula y Adrián.</p>
+    </div>
+    <div class="card crema-border">
+      <h3>Paula</h3>
+      <p>Fisioterapeuta. De Canarias. Vive y trabaja en Zúrich desde hace 2,5 años. Llegó directamente tras terminar la carrera. Experta en condiciones laborales y vida cotidiana en Suiza.</p>
+    </div>
+  </div>
+  <h2 class="anim" style="margin-top:22px; color:var(--crema-dimmed);">Dos fisioterapeutas que ya lo han vivido.</h2>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     BREATHING 1 — NUEVA VIDA
+══════════════════════════════════════════ -->
+<div class="slide breathing" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1920&q=80');">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <p class="breathing-text">No es solo un trabajo. Es una nueva vida.</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 3 — RESULTADOS DEL PROGRAMA
+══════════════════════════════════════════ -->
+<div class="slide" id="s3">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Resultados reales</div>
+  <h1 class="anim">Ya <em>funciona</em></h1>
+  <div class="divider anim"></div>
+  <div class="grid-3 anim">
+    <div class="card oro-border" style="text-align:center;">
+      <div class="numero-hero small" style="color:var(--oro);">35+</div>
+      <p style="color:var(--crema-suave); margin-top:8px; font-size:15px; font-weight:500;">fisioterapeutas<br>ya trabajando en Suiza</p>
+    </div>
+    <div class="card oro-border" style="text-align:center;">
+      <div class="numero-hero small">25–30</div>
+      <p style="color:var(--crema-suave); margin-top:8px; font-size:15px; font-weight:500;">buscando trabajo<br>actualmente</p>
+    </div>
+    <div class="card oro-border" style="text-align:center;">
+      <div class="numero-hero small">40–50</div>
+      <p style="color:var(--crema-suave); margin-top:8px; font-size:15px; font-weight:500;">en proceso activo<br>próximos meses</p>
+    </div>
+  </div>
+  <h2 class="anim" style="margin-top:24px; font-family:'Fraunces',serif; font-style:italic; color:var(--crema-suave); font-weight:300; font-size:clamp(16px,1.8vw,22px);">"Hay una gran demanda de profesionales en Suiza"</h2>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 4 — CASOS ESPECIALES
+══════════════════════════════════════════ -->
+<div class="slide" id="s4">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Antes de empezar</div>
+  <h1 class="anim">Casos<br><em>especiales</em></h1>
+  <div class="divider anim"></div>
+  <div class="grid-2 anim" style="margin-top:22px;">
+    <div class="card warn-border">
+      <h3>🎓 Estudiantes</h3>
+      <p>Sin título oficial (o supletorio pagado) <strong style="color:var(--crema);">no puedes iniciar el proceso</strong>. Lo único que puedes adelantar ahora es el idioma.</p>
+    </div>
+    <div class="card warn-border">
+      <h3>🌍 Latinoamérica / fuera de Europa</h3>
+      <p>Proceso más largo y estricto. El Precheck puede tardar hasta <strong style="color:var(--crema);">6 meses</strong> (vs 1 mes para europeos). Pueden exigir el B2 desde el principio. Aplica si tienes nacionalidad europea pero estudiaste fuera.</p>
+    </div>
+  </div>
+  <div class="alerta anim">
+    <span class="alerta-icon">💡</span>
+    <div class="alerta-text"><strong>Se puede hacer</strong>, pero hay que saber esto desde el principio.</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 5 — POR QUÉ NOS VAMOS A SUIZA
+══════════════════════════════════════════ -->
+<div class="slide" id="s5">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">La motivación</div>
+  <h1 class="anim">¿Por qué <em>Suiza</em>?</h1>
+  <div class="divider anim"></div>
+  <div class="grid-2 anim" style="margin-top:22px;">
+    <div class="card oro-border">
+      <h3>🚀 Ambición</h3>
+      <p>Quiero mejorar profesional y económicamente. Vivir una experiencia nueva. Crecer como profesional.</p>
+    </div>
+    <div class="card oro-border">
+      <h3>🔒 Necesidad</h3>
+      <p>En España hay un "techo de cristal". Por más que te formes, hay un límite. Trabajo precario. Difícil emanciparse.</p>
+    </div>
+  </div>
+  <div class="quote-block anim">
+    <p>"Por mucho que me esfuerce, por mucho que me forme, tengo un límite que no puedo romper."</p>
+  </div>
+  <h2 class="anim" style="margin-top:16px; font-size:14px;">Los fisioterapeutas españoles tienen muy buena formación. En Suiza se nos valora y respeta como profesionales muy capacitados.</h2>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 6 — COMPARATIVA ESPAÑA VS SUIZA
+══════════════════════════════════════════ -->
+<div class="slide" id="s6">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">La diferencia clave</div>
+  <h1 class="anim">España vs <span class="oro">Suiza</span></h1>
+  <div class="comparativa anim">
+    <div class="comp-col left">
+      <div class="comp-header">🇪🇸 España</div>
+      <div class="comp-row">Sistema sanitario público</div>
+      <div class="comp-row">Alta competencia por plaza</div>
+      <div class="comp-row">Fisio = gasto de bolsillo</div>
+      <div class="comp-row">Poca demanda privada</div>
+      <div class="comp-row highlight">~1.400 € / mes</div>
+    </div>
+    <div class="comp-col right">
+      <div class="comp-header">🇨🇭 Suiza</div>
+      <div class="comp-row">Sistema privado universal</div>
+      <div class="comp-row">Déficit estructural de fisios</div>
+      <div class="comp-row">Fisio integrada en seguro médico</div>
+      <div class="comp-row">Demanda constante y creciente</div>
+      <div class="comp-row highlight">~6.000 CHF / mes</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     BREATHING 2 — LO QUE VALES
+══════════════════════════════════════════ -->
+<div class="slide breathing" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <p class="breathing-text">Llevas años formándote. Es hora de que te paguen lo que vales.</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 7 — REQUISITO CLAVE: EL B2
+══════════════════════════════════════════ -->
+<div class="slide" id="s7">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Requisito imprescindible</div>
+  <h1 class="anim">Necesitas el <span class="oro">B2</span> certificado</h1>
+  <h2 class="anim">En uno de los tres idiomas oficiales de trabajo</h2>
+  <div class="grid-3 anim">
+    <div class="idioma-card">
+      <div class="idioma-flag">🇩🇪</div>
+      <h3>Alemán</h3>
+      <p>21 cantones. Mayor volumen de trabajo. Recomendado si partes de cero.</p>
+    </div>
+    <div class="idioma-card">
+      <div class="idioma-flag">🇫🇷</div>
+      <h3>Francés</h3>
+      <p>4 cantones. Buena oferta hospitalaria. Más competencia (franceses del este).</p>
+    </div>
+    <div class="idioma-card">
+      <div class="idioma-flag">🇮🇹</div>
+      <h3>Italiano</h3>
+      <p>1 cantón (Ticino). Muy competido. No gestionamos plazas aquí.</p>
+    </div>
+  </div>
+  <div class="alerta anim">
+    <span class="alerta-icon">⚠️</span>
+    <div class="alerta-text">Europeos: <strong>2 años de margen</strong> para el B2 · LATAM: pueden pedirlo desde el inicio · El B2 de inglés <strong>no vale</strong></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 8 — PROCESO DE HOMOLOGACIÓN
+══════════════════════════════════════════ -->
+<div class="slide scrollable" id="s8">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">El proceso completo · Cruz Roja Suiza (SRK)</div>
+  <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Homologación <em>paso a paso</em></h1>
+  <h2 class="anim">Duración total: 5–8 meses (media: 6–7 meses)</h2>
+  <div class="pasos anim">
+    <div class="paso">
+      <div class="paso-num">1</div>
+      <div>
+        <h3>Precheck (Preautorización)</h3>
+        <p>Envías 2 documentos traducidos de forma jurada a una plataforma online. Resultado: Precheck positivo = puedes iniciar la homologación.</p>
+        <span class="badge-tiempo">~1 mes (LATAM: hasta 6 meses)</span>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">2</div>
+      <div>
+        <h3>Solicitud completa de homologación</h3>
+        <p>Recibes carta en tu domicilio con lista de documentos. Reúnes, traduces y envías todo. Tasa SRK: 600 CHF (~650€).</p>
+        <span class="badge-tiempo">Traducciones: ~200–500€</span>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">3</div>
+      <div>
+        <h3>Decisión</h3>
+        <p>Con B2 → Decisión TOTAL (ya puedes trabajar). Sin B2 → Decisión PARCIAL (válida 2 años, todo correcto, solo falta el B2).</p>
+        <span class="badge-tiempo">Variable</span>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">4</div>
+      <div>
+        <h3>Segunda tasa (al adjuntar el B2)</h3>
+        <p>Pago final de 400 CHF (~430€) cuando entregas el certificado B2.</p>
+        <span class="badge-tiempo">Coste total: ~1.350–1.500€</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 9 — DECISIÓN PARCIAL VS TOTAL
+══════════════════════════════════════════ -->
+<div class="slide" id="s9">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Homologación</div>
+  <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Parcial vs <span class="oro">Total</span></h1>
+  <div class="comparativa anim">
+    <div class="comp-col left">
+      <div class="comp-header">Decisión Parcial</div>
+      <div class="comp-row">Documentación completa ✓</div>
+      <div class="comp-row">Falta el B2</div>
+      <div class="comp-row">No puedes trabajar oficialmente</div>
+      <div class="comp-row" style="font-size:13px;">Excepción: 2–4 de cada 100 clínicas alemanas te aceptan bajo tutela</div>
+      <div class="comp-row" style="font-size:13px;">En cantones franceses: prácticamente imposible sin B2</div>
+    </div>
+    <div class="comp-col right">
+      <div class="comp-header" style="color:var(--oro);">Decisión Total ✓</div>
+      <div class="comp-row">B2 certificado ✓</div>
+      <div class="comp-row">Homologación completa ✓</div>
+      <div class="comp-row highlight">Mañana tienes trabajo</div>
+      <div class="comp-row" style="font-size:13px; color:var(--oro);">Paula tiene ahora mismo +10 clínicas pidiendo currículums</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 10 — CANTONES Y ZONAS
+══════════════════════════════════════════ -->
+<div class="slide" id="s10">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Geografía</div>
+  <h1 class="anim">Cantones y <em>zonas</em></h1>
+  <h2 class="anim">Suiza se divide en cantones (como comunidades autónomas, pero más independientes)</h2>
+  <div class="grid-3 anim">
+    <div class="card oro-border" style="text-align:center;">
+      <h3 style="font-size:36px; margin-bottom:12px;">🇩🇪</h3>
+      <h3>21 cantones alemanes</h3>
+      <p>Zona más grande. Más trabajo. Más salario. Lo que gestionamos principalmente.</p>
+    </div>
+    <div class="card oro-border" style="text-align:center;">
+      <h3 style="font-size:36px; margin-bottom:12px;">🇫🇷</h3>
+      <h3>4 cantones franceses</h3>
+      <p>Zona romanda. Buena oferta hospitalaria. Más competencia (franceses del este).</p>
+    </div>
+    <div class="card" style="text-align:center; opacity:0.6;">
+      <h3 style="font-size:36px; margin-bottom:12px;">🇮🇹</h3>
+      <h3>1 cantón italiano</h3>
+      <p>Ticino. Muy saturado. No gestionamos plazas.</p>
+    </div>
+  </div>
+  <div class="alerta anim">
+    <span class="alerta-icon">✅</span>
+    <div class="alerta-text">Nosotros ayudamos con: <strong>zona alemana ✓</strong> y <strong>zona francesa ✓</strong></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 11 — TIPOS DE TRABAJO
+══════════════════════════════════════════ -->
+<div class="slide" id="s11">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Opciones laborales</div>
+  <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Tipos de <em>trabajo</em></h1>
+  <div class="grid-3 anim">
+    <div class="card oro-border">
+      <h3>🏥 Clínica privada</h3>
+      <p style="margin-bottom:10px;">Para quien llega · Nivel: B1–B2</p>
+      <ul class="data-list" style="margin-top:0;">
+        <li><span class="data-label">Sin experiencia</span><span class="data-value">4.000–4.500 CHF</span></li>
+        <li><span class="data-label">Con B2 + exp.</span><span class="data-value oro">5.000–6.000 CHF</span></li>
+        <li><span class="data-label">Bonus agenda</span><span class="data-value">+1.000 CHF</span></li>
+      </ul>
+      <p style="font-size:12px; margin-top:8px; color:var(--crema-dimmed);">13 pagas anuales</p>
+    </div>
+    <div class="card oro-border">
+      <h3>🏨 Hospital</h3>
+      <p style="margin-bottom:10px;">Para quien ya lleva tiempo · Nivel: C1</p>
+      <div style="text-align:center; padding:16px 0;">
+        <div style="font-size:clamp(32px,4vw,44px); font-weight:900; color:var(--oro); line-height:1;">7.000–9.000</div>
+        <div style="font-size:14px; color:var(--crema-dimmed); margin-top:4px;">CHF netos/mes</div>
+      </div>
+    </div>
+    <div class="card oro-border">
+      <h3>💼 Autónomo</h3>
+      <p style="margin-bottom:10px;">A partir de 2 años con título homologado</p>
+      <div style="text-align:center; padding:16px 0;">
+        <div style="font-size:clamp(32px,4vw,44px); font-weight:900; color:var(--oro); line-height:1;">10k–15k</div>
+        <div style="font-size:14px; color:var(--crema-dimmed); margin-top:4px;">CHF/mes</div>
+      </div>
+      <p style="font-size:12px; color:var(--crema-dimmed);">Más libertad, más gestión</p>
+    </div>
+  </div>
+  <h2 class="anim" style="font-size:13px; margin-top:16px;">1 CHF ≈ 1,05–1,10 € (el franco vale más que el euro)</h2>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 12 — SALARIOS DATOS REALES
+══════════════════════════════════════════ -->
+<div class="slide dark-deep" id="s12">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Datos reales · Salarios netos</div>
+  <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Lo que <em>realmente</em> se <span class="oro">gana</span></h1>
+  <div class="divider anim"></div>
+  <div class="grid-2 anim">
+    <div class="card" style="text-align:center;">
+      <p style="font-size:12px; color:var(--crema-dimmed); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px;">Recién llegado (sin máster ni B2 total)</p>
+      <div style="font-size:clamp(36px,5vw,52px); font-weight:900; color:var(--crema); line-height:1;">4.100–4.300</div>
+      <div style="font-size:14px; color:var(--crema-dimmed); margin-top:4px;">CHF netos (~4.500€)</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <p style="font-size:12px; color:var(--crema-dimmed); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px;">Con B2 + experiencia + máster</p>
+      <div style="font-size:clamp(36px,5vw,52px); font-weight:900; color:var(--oro); line-height:1;">5.500–6.000</div>
+      <div style="font-size:14px; color:var(--crema-dimmed); margin-top:4px;">CHF netos (~6.000€)</div>
+    </div>
+  </div>
+  <div class="alerta anim">
+    <span class="alerta-icon">💰</span>
+    <div class="alerta-text">
+      <strong>Ejemplo real:</strong> Pablo y José → 5.600–5.700€ netos · Ahorro mínimo desde el día 1: <strong>1.000–1.500 CHF/mes</strong> · Con salario medio: <strong>2.500 CHF/mes</strong>
+    </div>
+  </div>
+  <div class="quote-block anim" style="margin-top:16px; text-align:center; max-width:700px;">
+    <p style="font-size:clamp(15px,1.6vw,19px);">"Si llevas 2 años en Suiza y ahorras 45.000€, ¿cuántos años necesitas en España para lo mismo?"</p>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     BREATHING 3 — TECHO DE CRISTAL
+══════════════════════════════════════════ -->
+<div class="slide breathing" style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1920&q=80');">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <p class="breathing-text">El techo de cristal en España no existe en Suiza.</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 13 — GASTOS DE VIDA
+══════════════════════════════════════════ -->
+<div class="slide" id="s13">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Coste de vida · Zúrich</div>
+  <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Gastos <em>mensuales</em></h1>
+  <div class="divider anim"></div>
+  <div class="grid-2 anim">
+    <div class="card">
+      <h3>🏠 Viviendo solo</h3>
+      <ul class="data-list" style="margin-top:10px;">
+        <li><span class="data-label">Piso individual</span><span class="data-value">~1.500 CHF</span></li>
+        <li><span class="data-label">Seguro médico</span><span class="data-value">~250–300 CHF</span></li>
+        <li><span class="data-label">Comida</span><span class="data-value">~400 CHF</span></li>
+        <li><span class="data-label">Transporte</span><span class="data-value">~100 CHF</span></li>
+        <li><span class="data-label">Gimnasio</span><span class="data-value">~70 CHF</span></li>
+        <li><span class="data-label">Teléfono + wifi</span><span class="data-value">~35 CHF</span></li>
+        <li><span class="data-label">Ocio</span><span class="data-value">~200–500 CHF</span></li>
+      </ul>
+      <div style="margin-top:14px; padding-top:14px; border-top:2px solid var(--oro); display:flex; justify-content:space-between;">
+        <span style="font-weight:700; color:var(--crema); font-size:16px;">Total estimado</span>
+        <span style="font-weight:900; color:var(--oro); font-size:18px;">2.500–3.000 CHF</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3>👥 Con compañero de piso</h3>
+      <p style="margin-top:10px;">Ejemplo: Lausana</p>
+      <div style="text-align:center; padding:24px 0;">
+        <div style="font-size:14px; color:var(--crema-dimmed);">Alquiler compartido</div>
+        <div style="font-size:clamp(32px,4vw,44px); font-weight:900; color:var(--oro); line-height:1; margin:8px 0;">~700 CHF</div>
+        <div style="font-size:14px; color:var(--crema-dimmed); margin-top:12px;">Total mensual estimado</div>
+        <div style="font-size:clamp(28px,3.5vw,36px); font-weight:800; color:var(--crema); line-height:1; margin-top:4px;">1.700–2.200 CHF</div>
+      </div>
+      <div class="alerta" style="margin-top:12px; padding:12px 16px;">
+        <span class="alerta-icon">🚗</span>
+        <div class="alerta-text" style="font-size:12px;">Truco: muchos fisios compran coche y van a comprar a Alemania o Italia (más barato).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 14 — CONDICIONES LABORALES
+══════════════════════════════════════════ -->
+<div class="slide" id="s14">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Tu día a día</div>
+  <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Condiciones <em>laborales</em></h1>
+  <div class="divider anim"></div>
+  <div class="icon-row anim">
+    <div class="icon-item">
+      <div class="icon-emoji">⏰</div>
+      <h4>Jornada</h4>
+      <p>42h semanales (~8,5h/día). Opción de reducir al 80% o 90%.</p>
+    </div>
+    <div class="icon-item">
+      <div class="icon-emoji">🏖️</div>
+      <h4>Vacaciones</h4>
+      <p>Mínimo 5 semanas al año. Algunas clínicas dan 6.</p>
+    </div>
+    <div class="icon-item">
+      <div class="icon-emoji">✈️</div>
+      <h4>Sabático</h4>
+      <p>Hasta 3 meses de permiso no remunerado manteniendo el puesto.</p>
+    </div>
+  </div>
+  <div class="icon-row anim">
+    <div class="icon-item">
+      <div class="icon-emoji">🛡️</div>
+      <h4>Seguro de accidentes</h4>
+      <p>Lo paga el trabajo. Cubre cualquier accidente (laboral o no).</p>
+    </div>
+    <div class="icon-item">
+      <div class="icon-emoji">🏦</div>
+      <h4>Pilar 1 — Pensión pública</h4>
+      <p>Cotización para la pensión pública suiza.</p>
+    </div>
+    <div class="icon-item">
+      <div class="icon-emoji">💎</div>
+      <h4>Pilar 2 — Fondo privado</h4>
+      <p>Ligado al trabajo. Si te vas de Suiza, te lo devuelven íntegramente.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 15 — TIPO DE FISIOTERAPIA
+══════════════════════════════════════════ -->
+<div class="slide" id="s15">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Práctica clínica</div>
+  <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Cómo se <em>trabaja</em></h1>
+  <div class="divider anim"></div>
+  <div class="grid-2 anim">
+    <div class="card">
+      <h3>📋 El modelo suizo</h3>
+      <p style="margin-bottom:8px;">El médico de cabecera prescribe sesiones de fisio (normalmente 9). El paciente elige la clínica. El seguro lo cubre.</p>
+      <p>El fisio trabaja con libertad clínica pero debe documentar todo para el seguro.</p>
+    </div>
+    <div class="card">
+      <h3>🏃 Enfoque de tratamiento</h3>
+      <p style="margin-bottom:8px;">Predomina la <strong style="color:var(--crema);">terapia activa</strong> — el paciente es protagonista de su recuperación.</p>
+      <p>Terapia manual: sí, especialmente al inicio. Objetivo: independencia total del paciente.</p>
+    </div>
+  </div>
+  <div class="grid-3 anim" style="max-width:880px; margin-top:14px;">
+    <div class="card" style="text-align:center;">
+      <h3>Punción seca</h3>
+      <p style="font-size:13px;">✅ Sí, en todas las clínicas. Mínimo 60h de formación acreditada.</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <h3>Neuromodulación</h3>
+      <p style="font-size:13px;">⚠️ Poco extendida, casi no se usa.</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <h3>Ecografía</h3>
+      <p style="font-size:13px;">❌ Sin tarifa del seguro. La hace el médico.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 16 — EL IDIOMA
+══════════════════════════════════════════ -->
+<div class="slide" id="s16">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">El idioma · proceso y mentalidad</div>
+  <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">El <em>idioma</em> no es barrera</h1>
+  <div class="divider anim"></div>
+  <div class="quote-block anim">
+    <p>"Los primeros meses me daba vergüenza cometer errores, pero los pacientes me ayudaban. Después de 2 meses ya no era un problema."</p>
+    <div class="quote-author">— Paula, 2,5 años en Zúrich (llegó con B1)</div>
+  </div>
+  <div class="grid-2 anim" style="margin-top:20px;">
+    <div class="card">
+      <h3>🗣️ El alemán suizo</h3>
+      <p>Los suizos hablan "Schweizerdeutsch" entre ellos. Si lo pides, cambian al alemán normal sin problema. En 2,5 años Paula no ha necesitado hablar suizo.</p>
+    </div>
+    <div class="card">
+      <h3>🇬🇧 El inglés</h3>
+      <p>Funciona como apoyo cuando falta vocabulario técnico. No es sustituto del idioma oficial.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 17 — VIDA EN SUIZA
+══════════════════════════════════════════ -->
+<div class="slide" id="s17">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Vida en Suiza</div>
+  <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Lo bueno y lo <em>real</em></h1>
+  <div class="comparativa anim">
+    <div class="comp-col right" style="background:rgba(201,168,76,0.08);">
+      <div class="comp-header" style="color:var(--oro);">✨ Lo bueno</div>
+      <div class="comp-row">Comunidad española grande</div>
+      <div class="comp-row">Verano: vida en la calle, eventos gratuitos</div>
+      <div class="comp-row">Invierno: montaña, esquí, naturaleza increíble</div>
+      <div class="comp-row">Gente simpática y respetuosa</div>
+    </div>
+    <div class="comp-col left">
+      <div class="comp-header">📌 Lo que hay que saber</div>
+      <div class="comp-row">Tiempo muy variable semana a semana</div>
+      <div class="comp-row">Suizos muy estructurados: quedar con semanas de antelación</div>
+      <div class="comp-row">Estar lejos de familia y amigos es un sacrificio real</div>
+    </div>
+  </div>
+  <div class="alerta anim">
+    <span class="alerta-icon">💡</span>
+    <div class="alerta-text">
+      <strong>Mascotas:</strong> sí, gestión posible · <strong>Pareja no sanitaria:</strong> 3 meses de visado, debe encontrar trabajo o casarse · <strong>Hijos:</strong> factible, clínicas ayudan con guarderías
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 18 — LO QUE HACE FISIO EN SUIZA
+══════════════════════════════════════════ -->
+<div class="slide" id="s18">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Nuestro servicio</div>
+  <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Qué hacemos <em>por ti</em></h1>
+  <div class="divider anim"></div>
+  <div class="grid-2 anim">
+    <div class="card">
+      <h3>📦 ¿Qué incluye?</h3>
+      <ul class="checklist" style="margin-top:10px;">
+        <li><span class="check">✓</span> Guía completa de documentación SRK</li>
+        <li><span class="check">✓</span> Revisión y corrección de documentos</li>
+        <li><span class="check">✓</span> Acompañamiento WhatsApp + correo (6–7 meses)</li>
+        <li><span class="check">✓</span> Búsqueda activa de trabajo</li>
+        <li><span class="check">✓</span> Ayuda con piso, banco, teléfono, seguro</li>
+        <li><span class="check">✓</span> Comunidad de fisios en Suiza</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>💰 ¿Cuánto cuesta?</h3>
+      <div style="margin-top:16px;">
+        <div style="padding:16px; background:rgba(201,168,76,0.1); border-radius:10px; margin-bottom:12px;">
+          <div style="font-size:12px; color:var(--crema-dimmed); text-transform:uppercase; letter-spacing:1.5px;">Zona alemana</div>
+          <div style="font-size:clamp(28px,3vw,36px); font-weight:900; color:var(--oro); margin-top:4px;">302,50€</div>
+          <div style="font-size:12px; color:var(--crema-dimmed); margin-top:2px;">250€ + IVA · Precio bajo porque la clínica nos financia</div>
+        </div>
+        <div style="padding:16px; background:rgba(255,255,255,0.05); border-radius:10px;">
+          <div style="font-size:12px; color:var(--crema-dimmed); text-transform:uppercase; letter-spacing:1.5px;">Zona francesa</div>
+          <div style="font-size:clamp(22px,2.5vw,28px); font-weight:800; color:var(--crema); margin-top:4px;">302,50€ – 605€</div>
+          <div style="font-size:12px; color:var(--crema-dimmed); margin-top:2px;">Depende de si encontramos clínica financiadora</div>
+        </div>
+      </div>
+      <p style="font-size:12px; color:var(--crema-dimmed); margin-top:12px;">Aparte: traducciones + 1.000 CHF (tasas SRK)</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 19 — CURSO DE ALEMÁN GRATUITO
+══════════════════════════════════════════ -->
+<div class="slide scrollable dark-deep" id="s19">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Oferta exclusiva · Plazas limitadas</div>
+  <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Curso de alemán <span class="oro">gratuito</span></h1>
+  <h2 class="anim">Solo para la zona alemana · 40 plazas disponibles</h2>
+  <div class="divider anim"></div>
+  <div class="grid-2 anim">
+    <div class="card oro-border">
+      <h3>Fase 1 — De 0 a B1</h3>
+      <ul class="data-list" style="margin-top:10px;">
+        <li><span class="data-label">Duración</span><span class="data-value">6 meses</span></li>
+        <li><span class="data-label">Ritmo</span><span class="data-value">1h/día, lun–jue</span></li>
+        <li><span class="data-label">Grupos</span><span class="data-value">6–10 personas</span></li>
+        <li><span class="data-label">Coste</span><span class="data-value oro">GRATIS</span></li>
+      </ul>
+      <p style="font-size:12px; color:var(--crema-dimmed); margin-top:10px;">Horarios: 8–9h, 11–12h, 19:30–20:30h, 21:30–22:30h</p>
+    </div>
+    <div class="card oro-border">
+      <h3>Fase 2 — De B1 a B2 (opcional)</h3>
+      <ul class="data-list" style="margin-top:10px;">
+        <li><span class="data-label">Duración</span><span class="data-value">3 meses intensivos</span></li>
+        <li><span class="data-label">Ritmo</span><span class="data-value">2h/día</span></li>
+        <li><span class="data-label">Coste</span><span class="data-value">~100€/mes</span></li>
+        <li><span class="data-label">Examen Telk</span><span class="data-value oro">Lo pagamos nosotros</span></li>
+      </ul>
+      <p style="font-size:12px; color:var(--crema-dimmed); margin-top:10px;">El examen Telk es el más fácil y oficial para homologar.</p>
+    </div>
+  </div>
+  <div class="alerta anim">
+    <span class="alerta-icon">📋</span>
+    <div class="alerta-text">
+      <strong>4 condiciones para que sea gratuito:</strong><br>
+      1. Asistencia mínima del 80% · 2. Compromiso de venir en 14 meses · 3. Trabajar con nuestras clínicas · 4. Avanzar con el proceso SRK
+    </div>
+  </div>
+  <div class="alerta anim" style="max-width:880px; background:rgba(255,255,255,0.05); border-color:var(--crema-border);">
+    <span class="alerta-icon">⚠️</span>
+    <div class="alerta-text">
+      "El curso es una guía con profesor. Aparte, hay que estudiar por cuenta propia: podcasts, series, apps. <strong>El que no estudia fuera del curso siempre acaba con el agua al cuello.</strong>"
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     BREATHING 4 — B2 Y SRK
+══════════════════════════════════════════ -->
+<div class="slide breathing" style="background-image:url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1920&q=80');">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <p class="breathing-text">Con el B2 y la SRK, mañana tienes trabajo.</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 20 — CTA FINAL
+══════════════════════════════════════════ -->
+<div class="slide dark-deep" id="s20">
+  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <div class="label anim">Plazas limitadas</div>
+  <h1 class="anim">¿Listo para<br>dar el <span class="oro">paso</span>?</h1>
+  <h2 class="anim" style="font-family:'Fraunces',serif; font-style:italic; font-size:clamp(16px,1.8vw,22px); color:var(--crema-suave); font-weight:300;">Quedan plazas limitadas en el próximo curso de alemán</h2>
+  <div class="divider anim"></div>
+  <ul class="checklist anim">
+    <li><span class="check">✓</span> Gestión completa de la homologación ante la SRK</li>
+    <li><span class="check">✓</span> Curso de alemán de 6 meses incluido (zona alemana)</li>
+    <li><span class="check">✓</span> Búsqueda activa de empleo y negociación de contrato</li>
+    <li><span class="check">✓</span> Acompañamiento total en la llegada: piso, banco, seguro, teléfono</li>
+    <li><span class="check">✓</span> Comunidad de fisios españoles ya instalados en Suiza</li>
+  </ul>
+  <span class="cta-secondary anim" style="margin-top:28px; font-size:17px;">Más de 35 fisioterapeutas ya trabajando en Suiza</span>
+</div>
+
+
+<!-- NAV DOTS -->
+<div class="nav-dots" id="navDots"></div>
+<div class="nav-hint">← → · espacio</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const progress = document.getElementById('progress');
+  const dotsContainer = document.getElementById('navDots');
+  let current = 0;
+  const total = slides.length;
+
+  // ─── Set data-animation on each slide ───
+  const animMap = {
+    s1:'fade-up', s2:'from-left', s3:'from-right', s4:'zoom',
+    s5:'from-left', s6:'fade-up-slow', s7:'from-right', s8:'zoom',
+    s9:'from-left', s10:'stagger', s11:'from-right', s12:'zoom',
+    s13:'from-left', s14:'stagger', s15:'from-right', s16:'from-left',
+    s17:'fade-up-slow', s18:'from-right', s19:'zoom', s20:'fade-up'
+  };
+  Object.entries(animMap).forEach(([id, anim]) => {
+    const el = document.getElementById(id);
+    if (el) el.dataset.animation = anim;
+  });
+  document.querySelectorAll('.slide.breathing').forEach(s => {
+    s.dataset.animation = 'breathing';
+  });
+
+  // ─── Create nav dots ───
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(d);
+  });
+
+  // ─── Animation config per type ───
+  const animConfig = {
+    'fade-up':      { cls: null,           stagger: 0.08 },
+    'from-left':    { cls: 'a-from-left',  stagger: 0.08 },
+    'from-right':   { cls: 'a-from-right', stagger: 0.08 },
+    'zoom':         { cls: 'a-zoom',       stagger: 0.10 },
+    'fade-up-slow': { cls: null,           stagger: 0.16 },
+    'stagger':      { cls: null,           stagger: 0.22 }
+  };
+
+  function triggerAnims(slide) {
+    const type = slide.dataset.animation || 'fade-up';
+
+    // Breathing slides: cinematic slow scale fade
+    if (type === 'breathing') {
+      const text = slide.querySelector('.breathing-text');
+      if (text) {
+        text.classList.remove('visible');
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          text.classList.add('visible');
+        }));
+      }
+      return;
+    }
+
+    // Content slides: per-type entrance
+    const config = animConfig[type] || animConfig['fade-up'];
+    const anims = slide.querySelectorAll('.anim');
+    anims.forEach((el, i) => {
+      el.classList.remove('visible', 'a-from-left', 'a-from-right', 'a-zoom');
+      if (config.cls) el.classList.add(config.cls);
+      el.style.transitionDelay = (0.06 + i * config.stagger) + 's';
+    });
+
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      anims.forEach(el => el.classList.add('visible'));
+    }));
+  }
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dotsContainer.children[current].classList.remove('active');
+    current = (n + total) % total;
+    slides[current].classList.add('active');
+    dotsContainer.children[current].classList.add('active');
+    progress.style.width = ((current + 1) / total * 100) + '%';
+    triggerAnims(slides[current]);
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goTo(current + 1); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(current - 1); }
+  });
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? goTo(current + 1) : goTo(current - 1);
+    }
+  });
+
+  // Init
+  progress.style.width = (1 / total * 100) + '%';
+  triggerAnims(slides[0]);
+</script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+# SCRIPT: Webinar "Fisioterapia en Suiza"
+# Presentadores: Rafa (fisioterapeuta en Francia, fundador) y Paula (fisioterapeuta en Suiza)
+# Audiencia: Fisioterapeutas españoles y latinoamericanos que quieren emigrar a Suiza
+# Instrucción: Genera una presentación HTML completa con una slide por cada sección marcada con [SLIDE].
+# Usa el style-reference de Fisio en Suiza: fondo granate oscuro, tipografía crema/blanca, acentos dorados.
+
+---
+
+[SLIDE: PORTADA]
+Título: Fisioterapia en Suiza
+Subtítulo (en itálica elegante): Da el gran salto profesional y económico
+Datos de credibilidad (pills discretas):
+- 35+ fisios ya trabajando en Suiza
+- ×4 salario vs España
+- Rafa & Paula — fisioterapeutas en activo
+
+---
+
+[SLIDE: QUIÉNES SOMOS]
+Tipo: Dos columnas, una por presentador
+Rafa:
+- Fisioterapeuta. De Cádiz. Vive en Francia desde 2019.
+- Fundó Fisio en Francia en 2021.
+- Amplió el proyecto a Suiza junto a Paula y Adrián.
+Paula:
+- Fisioterapeuta. De Canarias. Vive y trabaja en Zúrich desde hace 2,5 años.
+- Llegó a Suiza directamente tras terminar la carrera.
+- Experta en condiciones laborales y vida cotidiana en Suiza.
+Nota de diseño: Tono cálido, humano. No corporativo.
+
+---
+
+[SLIDE: RESULTADOS DEL PROGRAMA]
+Tipo: 3 números de impacto en cards
+- 35+ fisioterapeutas ya trabajando e instalados en Suiza
+- 25–30 buscando trabajo actualmente
+- 40–50 en proceso activo para los próximos meses
+Mensaje debajo: "Hay trabajo infinito en Suiza"
+
+---
+
+[SLIDE: CASOS ESPECIALES — ATENCIÓN]
+Tipo: 2 cards de advertencia (no es error, es información importante)
+Card 1 — Estudiantes:
+- Sin título oficial (o título supletorio pagado) NO puedes iniciar el proceso
+- Lo único que puedes adelantar ahora es el idioma
+Card 2 — Latinoamérica / fuera de Europa:
+- Proceso más largo y estricto
+- El Precheck puede tardar hasta 6 meses (vs 1 mes para europeos)
+- Pueden exigir el B2 desde el principio
+- Aplica si tienes nacionalidad europea pero estudiaste fuera de Europa (ej. Argentina)
+Nota positiva al pie: "Se puede hacer, pero hay que saber esto desde el principio."
+
+---
+
+[SLIDE: POR QUÉ NOS VAMOS A SUIZA]
+Tipo: Dos razones principales, visual impactante
+Razón 1 — Ambición: Quiero mejorar profesional y económicamente. Vivir una experiencia nueva.
+Razón 2 — Necesidad: En España existe un "techo de cristal". Por más que te formes, hay un límite que no puedes romper. Trabajo precario. Difícil emanciparse.
+Cita de impacto (slide propia o destacada dentro):
+"Por mucho que me esfuerce, por mucho que me forme, tengo un límite que no puedo romper."
+Dato de contexto: "Los fisioterapeutas españoles tienen muy buena formación. En Suiza se nos valora y respeta como profesionales muy capacitados."
+
+---
+
+[SLIDE: COMPARATIVA ESPAÑA VS SUIZA]
+Tipo: Comparativa dos columnas
+España:
+- Sistema sanitario público
+- Alta competencia por plaza
+- Para ir al fisio tienes que pagarlo de tu bolsillo
+- Poca demanda privada
+- ~1.400 € / mes
+Suiza:
+- Sistema sanitario privado universal (todos tienen seguro)
+- Déficit estructural de fisioterapeutas
+- La fisio está integrada en el seguro médico privado
+- Demanda constante y creciente
+- ~6.000 CHF / mes (equivale a ~6.200–6.500 €)
+
+---
+
+[SLIDE: REQUISITO CLAVE — EL B2]
+Tipo: Slide de impacto + 3 cards de idioma
+Headline: Para trabajar en Suiza necesitas el B2 certificado
+Subtítulo: En uno de los tres idiomas oficiales de trabajo
+Cards:
+- 🇩🇪 Alemán — 21 cantones. Mayor volumen de trabajo. Recomendado si partes de cero.
+- 🇫🇷 Francés — 4 cantones. Buena oferta hospitalaria. Más competencia (franceses del este también vienen).
+- 🇮🇹 Italiano — 1 cantón (Ticino). Muy competido. No gestionamos plazas aquí.
+Nota importante (alerta dorada):
+- Para europeos/españoles: tienes 2 años de margen para conseguir el B2 desde que inicias el proceso
+- Para LATAM o título no europeo: pueden pedir el B2 desde el principio
+- El B2 de inglés NO vale
+- Curiosidad: Si eres italiano pero estudiaste en España, también necesitas B2 certificado de italiano
+
+---
+
+[SLIDE: EL PROCESO DE HOMOLOGACIÓN — VISIÓN GENERAL]
+Tipo: Timeline horizontal o vertical con 4 pasos
+Intro: "Ahora mismo ninguno puede trabajar en Suiza. Para hacerlo hay que homologar el título."
+Organismo: Cruz Roja Suiza (SRK)
+Duración total: 5–8 meses (media: 6–7 meses)
+
+Paso 1 — PRECHECK (Preautorización)
+- Envías 2 documentos traducidos de forma jurada a una plataforma online
+- Resultado: Precheck positivo = puedes iniciar la homologación
+- Coste: Solo la traducción de 2 documentos (~50–150€)
+- Tiempo: ~1 mes (para LATAM puede tardar hasta 6 meses)
+
+Paso 2 — SOLICITUD COMPLETA DE HOMOLOGACIÓN
+- Recibes carta en tu domicilio con lista de documentos
+- Reúnes y traduces todos los documentos (~200–500€, media ~350€)
+- Pagas la tasa a la SRK: 600 CHF (~650€)
+- Envías todo junto al B2 (si lo tienes) o sin él
+
+Paso 3 — DECISIÓN
+- Con B2 → Decisión TOTAL (homologación completa. Ya puedes trabajar.)
+- Sin B2 → Decisión PARCIAL (válida 2 años. Todo correcto, solo falta el B2.)
+  
+Paso 4 — SEGUNDA TASA (cuando adjuntas el B2)
+- Pago final: 400 CHF (~430€)
+
+Coste total aproximado: Traducciones + 1.000 CHF (600 + 400) ≈ 1.350–1.500€ en total (pagado al gobierno suizo/SRK)
+
+---
+
+[SLIDE: DECISIÓN PARCIAL VS TOTAL]
+Tipo: Comparativa clara, visual
+Decisión PARCIAL:
+- Documentación completa ✓
+- Falta el B2
+- No puedes trabajar oficialmente
+- Excepción: Algunas clínicas alemanas (pocas, 2–4 de cada 100) te aceptan bajo tutela de otro fisio mientras te sacas el B2
+- En cantones franceses: prácticamente imposible sin B2. Hay más competencia.
+Decisión TOTAL:
+- Tienes el B2 certificado ✓
+- Tienes la homologación completa ✓
+- Mañana tienes trabajo. Paula tiene ahora mismo más de 10 clínicas pidiendo currículums.
+
+---
+
+[SLIDE: SUIZA — CANTONES Y ZONAS]
+Tipo: Visual geográfico o cards de zonas
+Intro: "Suiza se divide en cantones (como comunidades autónomas, pero más independientes)"
+- 21 cantones alemanes — Zona más grande. Más trabajo. Más salario. Lo que gestionamos principalmente.
+- 4 cantones franceses — Zona romanda. Buena oferta hospitalaria. Más competencia (franceses del este).
+- 1 cantón italiano — Ticino. Muy saturado. No gestionamos plazas.
+Nosotros ayudamos con: zona alemana ✓ y zona francesa ✓
+
+---
+
+[SLIDE: TIPOS DE TRABAJO EN SUIZA]
+Tipo: 3 cards progresivas (por nivel de experiencia)
+Card 1 — Clínica privada (para quien llega)
+- Nivel de idioma requerido: B1–B2
+- Salario al llegar sin experiencia: 4.000–4.500 CHF netos/mes
+- Con experiencia y B2 certificado: 5.000–6.000 CHF netos/mes
+- Sistema de bonus: agendas completas = hasta 1.000 CHF extra al mes
+- 13 pagas anuales
+Card 2 — Hospital (para quien ya lleva tiempo)
+- Nivel de idioma requerido: C1
+- Salario: 7.000–9.000 CHF netos/mes
+Card 3 — Autónomo (a partir de 2 años trabajando con título homologado)
+- Ingresos: 10.000–15.000 CHF/mes
+- Más libertad horaria, pero más gestión administrativa
+Nota: 1 CHF ≈ 1,05–1,10 € (el franco vale más que el euro)
+
+---
+
+[SLIDE: SALARIOS — DATOS REALES]
+Tipo: Números de impacto, visual potente
+Recién llegado sin máster ni B2 total: 4.100–4.300 CHF netos (~4.500€)
+Con B2 + experiencia + máster: 5.500–6.000 CHF netos (~6.000€)
+Ejemplo real de clientes: Pablo y José → 5.600–5.700 € netos
+Cálculo de ahorro mensual:
+- Gastos estimados al mes (piso compartido, seguro, comida, ocio): ~2.500–3.000€
+- Recién llegado ahorra: 1.000–1.500 CHF/mes como mínimo desde el primer día
+- Con salario medio: 2.500 CHF/mes de ahorro
+- "Si llevas 2 años en Suiza y ahorras 45.000€, ¿cuántos años necesitas en España para lo mismo?"
+
+---
+
+[SLIDE: GASTOS DE VIDA EN SUIZA]
+Tipo: Lista de gastos con totales visuales
+Desglose mensual (viviendo solo en Zúrich):
+- Piso individual: ~1.500 CHF (incluye luz, agua, calefacción)
+- Seguro médico: ~250–300 CHF/mes
+- Comida: ~400 CHF/mes (similar al Mercadona en España)
+- Transporte público: ~100 CHF/mes (bono ciudad)
+- Gimnasio: ~70 CHF/mes
+- Teléfono + wifi: ~35 CHF/mes
+- Ocio / salidas: ~200–500 CHF/mes
+Total estimado: 2.500–3.000 CHF/mes
+Viviendo con compañero de piso (ej. Lausana): bajas a ~700 CHF de alquiler → total ~1.700–2.200 CHF
+Truco habitual: Muchos fisios compran coche y van a hacer la compra a Alemania o Italia (más barato).
+
+---
+
+[SLIDE: CONDICIONES LABORALES]
+Tipo: Cards o iconos con datos clave
+- Jornada: 42 horas semanales (2h más que en España). ~8,5h/día
+- Opciones de reducción: Puedes pedir jornada al 80% o 90% (menos días, menos sueldo)
+- Vacaciones: Mínimo 5 semanas al año. Algunas clínicas dan 6.
+- Permiso no remunerado: Puedes pedir hasta 3 meses sabáticos manteniendo el puesto
+- Seguro de accidentes: Lo paga el trabajo. Cubre cualquier accidente (laboral o no)
+- Pensiones / "la hucha":
+  - Pilar 1: Cotización para pensión pública suiza
+  - Pilar 2: Fondo de pensión privado ligado al trabajo. Si te vas de Suiza, te lo devuelven íntegramente.
+
+---
+
+[SLIDE: TIPO DE FISIOTERAPIA QUE SE PRACTICA]
+Tipo: Slide informativa, diseño limpio
+El modelo en Suiza:
+- El médico de cabecera prescribe sesiones de fisio (normalmente 9 sesiones)
+- El paciente elige la clínica. El seguro lo cubre.
+- El fisio trabaja con libertad clínica pero debe documentar todo para el seguro médico
+Enfoque de tratamiento:
+- Predomina la terapia activa (el paciente es protagonista de su recuperación)
+- Terapia manual: sí, especialmente al inicio
+- Objetivo: que el paciente termine siendo totalmente independiente
+Técnicas específicas:
+- Punción seca: Sí, se usa en todas las clínicas. Necesitas mínimo 60h de formación acreditada.
+- Neuromodulación / electromodulación: poco extendida, casi no se usa
+- Ecografía en consulta: aún no tiene tarifa del seguro → la hace el médico
+
+---
+
+[SLIDE: EL IDIOMA — PROCESO Y MENTALIDAD]
+Tipo: Visual con fases de aprendizaje
+Testimonio real de Paula (llega con B1):
+"Los primeros meses me daba vergüenza cometer errores, pero los pacientes me ayudaban. Después de 2 meses ya no era un problema."
+Sobre el alemán suizo:
+- Los suizos hablan "Schweizerdeutsch" entre ellos, que es diferente del alemán estándar
+- Si lo pides, cambian al alemán normal sin problema
+- En 2,5 años Paula no ha necesitado hablar alemán suizo
+El inglés: funciona como apoyo cuando falta vocabulario técnico. No es sustituto.
+
+---
+
+[SLIDE: VIDA EN SUIZA — LO BUENO Y LO MENOS BUENO]
+Tipo: Dos columnas equilibradas (sin dramatizar ninguna)
+Lo bueno:
+- Comunidad española grande. Siempre encontrarás un grupito cerca.
+- En verano: vida en la calle, eventos gratuitos, actividades constantes
+- En invierno: montaña, esquí, nieve, naturaleza increíble
+- Gente simpática y respetuosa. Con los pacientes, 0 malas experiencias.
+Lo que hay que saber:
+- El tiempo es muy variable. Una semana sol, la siguiente lluvia.
+- Los suizos son muy estructurados: para quedar con ellos hay que agendar con semanas de antelación.
+- Estar lejos de familia y amigos. Es un sacrificio real que hay que asumir.
+Sobre mascotas y parejas:
+- Mascotas: sí se puede venir con ellas. Gestión posible.
+- Pareja no sanitaria: tiene 3 meses de visado. Debe encontrar trabajo o casarse antes de que expire.
+- Hijos: posible, las clínicas suelen ayudar con guarderías. Más complejo, pero factible.
+
+---
+
+[SLIDE: LO QUE HACE FISIO EN SUIZA]
+Tipo: Slide de servicio, clara y directa
+¿Qué gestionamos?
+- Zona alemana ✓ (100% seguro de financiación)
+- Zona francesa ✓ (según disponibilidad de clínica colaboradora)
+¿Qué incluye el servicio?
+- Guía completa de documentación para la SRK
+- Revisión y corrección de todos los documentos
+- Acompañamiento personalizado por WhatsApp y correo durante los 6–7 meses del proceso
+- Búsqueda activa de trabajo en clínicas colaboradoras
+- Ayuda con: alojamiento, cuenta bancaria, número de teléfono, seguro médico
+- Acceso a la comunidad de fisios en Suiza (grupos por zona: francesa y alemana)
+¿Cuánto cuesta?
+- Zona alemana: 250€ + IVA (total: 302,50€) — precio bajo porque la clínica nos financia
+- Zona francesa: 250€ + IVA si encontramos clínica financiadora / hasta 605€ con IVA si no
+(Esto es aparte de las traducciones y los 1.000 CHF que se pagan a la SRK)
+
+---
+
+[SLIDE: EL CURSO DE ALEMÁN GRATUITO]
+Tipo: Slide de oferta, con urgencia real (plazas limitadas)
+Solo para la zona alemana
+- 40 plazas disponibles. (En el webinar: 23 ya reservadas → quedan 17)
+Estructura del curso:
+- Fase 1: 6 meses / 1 hora diaria / lunes a jueves / grupos de 6–10 personas
+  → Objetivo: llevar de nivel 0 a B1
+  → Coste para el alumno: GRATIS
+  → Horarios disponibles: 8–9h, 11–12h, 19:30–20:30h, 21:30–22:30h (siempre el mismo grupo)
+- Fase 2 (opcional): 3 meses intensivos / 2 horas diarias para llegar de B1 a B2
+  → Coste: ~100€/mes (≈200–400€ total el curso). Nosotros pagamos el examen del B2 (Telk)
+  → El examen Telk es el más fácil y oficial para homologar
+Condiciones para que el curso sea gratuito (4 condiciones):
+1. Asistencia mínima del 80% a las clases
+2. Compromiso de venir a Suiza en los próximos 14 meses
+3. Venir a trabajar con una de las clínicas que nosotros gestionamos
+4. Avanzar activamente con el proceso burocrático de la SRK
+Lo que NO es el curso:
+"El curso es una guía con profesor. Aparte, hay que estudiar por cuenta propia: podcasts, series, apps. El que no estudia fuera del curso siempre acaba con el agua al cuello."
+
+---
+
+[SLIDE: CTA FINAL — PRÓXIMOS PASOS]
+Tipo: Slide de cierre con acción clara
+Headline: ¿Listo para dar el paso?
+Subheadline: Quedan plazas limitadas en el próximo curso de alemán
+Checklist (lo que incluye el programa):
+✓ Gestión completa de la homologación ante la SRK
+✓ Curso de alemán de 6 meses incluido (zona alemana)
+✓ Búsqueda activa de empleo y negociación de contrato
+✓ Acompañamiento total en la llegada: piso, banco, seguro, teléfono
+✓ Comunidad de fisios españoles ya instalados en Suiza
+Botón CTA principal: Reserva tu plaza →
+Elemento de confianza: "Más de 35 fisioterapeutas ya trabajando en Suiza"
