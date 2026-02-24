@@ -76,13 +76,13 @@ body {
 }
 
 /* Breathing slide background images */
-#s3  { background-image: url('https://images.unsplash.com/photo-1706639809623-93d4a8a0f0fc?auto=format&fit=crop&w=1920&q=80'); }
-#s7  { background-image: url('https://images.unsplash.com/photo-1579154491781-5e199df316aa?auto=format&fit=crop&w=1920&q=80'); }
-#s12 { background-image: url('https://images.unsplash.com/photo-1637851058613-95f0d41c3c2f?auto=format&fit=crop&w=1920&q=80'); }
-#s14 { background-image: url('https://images.unsplash.com/photo-1441039995991-e5c1178e605a?auto=format&fit=crop&w=1920&q=80'); }
-#s22 { background-image: url('https://images.unsplash.com/photo-1756572798557-1d196dcf8b2b?auto=format&fit=crop&w=1920&q=80'); }
-#s25 { background-image: url('https://images.unsplash.com/photo-1571113606406-f3ca1c36e7e7?auto=format&fit=crop&w=1920&q=80'); }
-#s28 { background-image: url('https://images.unsplash.com/photo-1758691737568-a1572060ce5a?auto=format&fit=crop&w=1920&q=80'); }
+#s5  { background-image: url('https://images.unsplash.com/photo-1706639809623-93d4a8a0f0fc?auto=format&fit=crop&w=1920&q=80'); }
+#s9  { background-image: url('https://images.unsplash.com/photo-1579154491781-5e199df316aa?auto=format&fit=crop&w=1920&q=80'); }
+#s14 { background-image: url('https://images.unsplash.com/photo-1637851058613-95f0d41c3c2f?auto=format&fit=crop&w=1920&q=80'); }
+#s16 { background-image: url('https://images.unsplash.com/photo-1441039995991-e5c1178e605a?auto=format&fit=crop&w=1920&q=80'); }
+#s24 { background-image: url('https://images.unsplash.com/photo-1756572798557-1d196dcf8b2b?auto=format&fit=crop&w=1920&q=80'); }
+#s27 { background-image: url('https://images.unsplash.com/photo-1571113606406-f3ca1c36e7e7?auto=format&fit=crop&w=1920&q=80'); }
+#s30 { background-image: url('https://images.unsplash.com/photo-1758691737568-a1572060ce5a?auto=format&fit=crop&w=1920&q=80'); }
 .slide.light-accent { background: var(--crema); }
 .slide.light-accent h1, .slide.light-accent h2,
 .slide.light-accent p, .slide.light-accent .label { color: var(--azul-deep); }
@@ -986,18 +986,62 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 2 — QUIÉN ES RAFA
+     SLIDE 2 — CONÓCENOS
 ══════════════════════════════════════════ -->
 <div class="slide" id="s2">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
+  <div class="label anim" style="color:var(--dorado);">Nuestra Plataforma</div>
+  <h1 class="anim" style="font-size:clamp(38px,4.5vw,60px);">Conócenos</h1>
+  <h2 class="anim" style="margin-top:8px; margin-bottom:28px;">fisioenfrancia.es</h2>
+  <div class="anim" style="width:80vw; max-width:1100px; margin:0 auto;">
+    <img src="./assets/WEBFRANCIA.png" alt="Web Fisio en Francia" style="width:100%; height:auto; border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,0.35);">
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 3 — SÍGUENOS EN INSTAGRAM
+══════════════════════════════════════════ -->
+<div class="slide" id="s3" style="padding:40px; min-height:80vh; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+  <div class="logo-mark" style="margin-bottom: 20px;">
+    <img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia" style="max-height: 50px;">
+  </div>
+  <div style="display:flex; align-items:center; justify-content:center; gap:20px; width:100%; max-width:1100px; margin:0 auto;">
+    <div class="anim" style="flex: 0 1 auto;">
+      <img src="./assets/Mockupfeed.png" alt="Instagram Feed Mockup" style="height:75vh; width:auto; display:block; object-fit:contain;">
+    </div>
+    <div class="anim" style="flex: 0 1 auto; text-align:left; min-width:300px;">
+      <h1 style="font-size:clamp(28px, 3.5vw, 48px); margin:0; line-height:1.1;">Síguenos en Instagram</h1>
+      <h2 style="margin: 10px 0 30px; color:var(--dorado); font-weight:600; font-size:clamp(18px, 2vw, 24px);">@fisioenfrancia</h2>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:20px;">
+        <li style="display:flex; align-items:flex-start; gap:15px; font-size:clamp(15px, 1.5vw, 19px); color:var(--crema-suave); line-height:1.4;">
+          <span style="font-size:22px; flex-shrink:0;">📋</span>
+          <span>Ofertas de empleo reales publicadas cada semana</span>
+        </li>
+        <li style="display:flex; align-items:flex-start; gap:15px; font-size:clamp(15px, 1.5vw, 19px); color:var(--crema-suave); line-height:1.4;">
+          <span style="font-size:22px; flex-shrink:0;">🎥</span>
+          <span>Testimonios de fisios que ya están en Francia</span>
+        </li>
+        <li style="display:flex; align-items:flex-start; gap:15px; font-size:clamp(15px, 1.5vw, 19px); color:var(--crema-suave); line-height:1.4;">
+          <span style="font-size:22px; flex-shrink:0;">🇫🇷</span>
+          <span>Consejos, vocabulario y vida real como fisio en Francia</span>
+        </li>
+      </ul>
+      <p class="frase-dorada anim" style="margin-top:35px; font-size:clamp(16px, 1.6vw, 20px); font-style:italic;">"Más de 6.700 fisios ya nos siguen. ¿Te unes?"</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 4 — QUIÉN ES RAFA
+══════════════════════════════════════════ -->
+<div class="slide" id="s4">
+  <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">Quién te habla</div>
   <div class="avatar-section anim">
-    <!-- AVATAR: Sustituir por foto real de Rafa -->
-    <div class="avatar-placeholder">
-      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="40" cy="30" r="14" stroke="#F0EDE6" stroke-width="2"/>
-        <path d="M16 68 C16 52 28 44 40 44 C52 44 64 52 64 68" stroke="#F0EDE6" stroke-width="2" fill="none"/>
-      </svg>
+    <div class="avatar-placeholder" style="border-radius:50%; width:180px; height:180px;">
+      <img src="./assets/Rafael.jpeg" alt="Rafael Valencia Chulián" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
     </div>
     <div class="avatar-info">
       <div class="avatar-name">Rafael Valencia Chulián</div>
@@ -1006,7 +1050,7 @@ h2 {
         <li><span class="bio-icon">📍</span> Gaditano. Estudió en Sevilla. En Francia desde 2019.</li>
         <li><span class="bio-icon">🗺️</span> Montpellier → París → Antillas Francesas (Guadalupe)</li>
         <li><span class="bio-icon">🏥</span> +5 años de experiencia en hospitales públicos, liberal y ultramar</li>
-        <li><span class="bio-icon">💬</span> <em style="color:var(--crema-dimmed);">"Tras vivir el proceso de trasladarse al extranjero, se dedica a ayudar a otros fisioterapeutas a mejorar sus condiciones laborales y calidad de vida"</em></li>
+        <li><span class="bio-icon">💬</span> <em style="color:var(--crema-dimmed);">"Tras vivir el proceso de trasladarme al extranjero, me dedico a ayudar a otros fisioterapeutas a mejorar sus condiciones laborales y calidad de vida"</em></li>
       </ul>
     </div>
   </div>
@@ -1015,18 +1059,18 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 3 — BREATHING SLIDE
+     SLIDE 5 — BREATHING SLIDE
 ══════════════════════════════════════════ -->
-<div class="slide breathing centered" id="s3">
+<div class="slide breathing centered" id="s5">
   <p class="breathing-text anim">Si te quedas en España…<br>¿qué va a cambiar?</p>
   <p class="breathing-sub anim">— La pregunta que lo empezó todo</p>
 </div>
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 4 — LA REALIDAD EN ESPAÑA
+     SLIDE 6 — LA REALIDAD EN ESPAÑA
 ══════════════════════════════════════════ -->
-<div class="slide" id="s4">
+<div class="slide" id="s6">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">La realidad</div>
   <h1 class="anim">El Techo de <em>Cristal</em></h1>
@@ -1062,9 +1106,9 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 5 — ¿POR QUÉ FRANCIA?
+     SLIDE 7 — ¿POR QUÉ FRANCIA?
 ══════════════════════════════════════════ -->
-<div class="slide" id="s5">
+<div class="slide" id="s7">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">La diferencia clave</div>
   <h1 class="anim">¿Por qué hay tanto<br>trabajo en <span class="dorado">Francia</span>?</h1>
@@ -1088,9 +1132,9 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 6 — DATO IMPACTANTE: 30%
+     SLIDE 8 — DATO IMPACTANTE: 30%
 ══════════════════════════════════════════ -->
-<div class="slide dark-deep" id="s6">
+<div class="slide dark-deep" id="s8">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <p class="label anim">Dato revelador</p>
   <div class="numero-hero accent anim">30<span class="unidad">%</span></div>
@@ -1105,18 +1149,18 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 7 — BREATHING SLIDE
+     SLIDE 9 — BREATHING SLIDE
 ══════════════════════════════════════════ -->
-<div class="slide breathing centered" id="s7">
+<div class="slide breathing centered" id="s9">
   <p class="breathing-text anim">En Francia, cuando un neurocirujano opera… es el fisioterapeuta quien decide si el paciente puede irse a casa.</p>
   <p class="breathing-sub anim">— Así de valorada está nuestra profesión</p>
 </div>
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 8 — PROFESIÓN DE ÉLITE
+     SLIDE 10 — PROFESIÓN DE ÉLITE
 ══════════════════════════════════════════ -->
-<div class="slide" id="s8">
+<div class="slide" id="s10">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">Fisioterapia en Francia</div>
   <h1 class="anim">Una Profesión<br>de <span class="dorado">Élite</span></h1>
@@ -1132,9 +1176,9 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 9 — HOMOLOGACIÓN OVERVIEW
+     SLIDE 11 — HOMOLOGACIÓN OVERVIEW
 ══════════════════════════════════════════ -->
-<div class="slide" id="s9">
+<div class="slide" id="s11">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">El proceso</div>
   <h1 class="anim">El Camino hacia <em>Francia</em></h1>
@@ -1172,9 +1216,9 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 10 — HORAS PRÁCTICAS
+     SLIDE 12 — HORAS PRÁCTICAS
 ══════════════════════════════════════════ -->
-<div class="slide" id="s10">
+<div class="slide" id="s12">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">Detalle importante</div>
   <h1 class="anim" style="font-size:clamp(36px,4.5vw,60px);">El Tema de las<br><em>Horas Prácticas</em></h1>
@@ -1194,9 +1238,9 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 11 — EL STAGE NO ES EL FIN DEL MUNDO
+     SLIDE 13 — EL STAGE NO ES EL FIN DEL MUNDO
 ══════════════════════════════════════════ -->
-<div class="slide" id="s11">
+<div class="slide" id="s13">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">Enfoque positivo</div>
   <h1 class="anim" style="font-size:clamp(36px,4.5vw,60px);">Si te mandan al Stage…<br><span class="dorado">aprovéchalo</span></h1>
@@ -1213,18 +1257,18 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 12 — BREATHING SLIDE
+     SLIDE 14 — BREATHING SLIDE
 ══════════════════════════════════════════ -->
-<div class="slide breathing centered" id="s12">
+<div class="slide breathing centered" id="s14">
   <p class="breathing-text anim">Homologa ahora,<br>decide después.</p>
   <p class="breathing-sub anim">La autorización no caduca. Si te pica la curiosidad, no tienes nada que perder.</p>
 </div>
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 13 — ALERTA 2027
+     SLIDE 15 — ALERTA 2027
 ══════════════════════════════════════════ -->
-<div class="slide" id="s13">
+<div class="slide" id="s15">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">⚠️ Alerta importante</div>
   <h1 class="anim">Cambio de Ley<br>en <span class="dorado">2027</span></h1>
@@ -1242,17 +1286,17 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 14 — BREATHING SLIDE
+     SLIDE 16 — BREATHING SLIDE
 ══════════════════════════════════════════ -->
-<div class="slide breathing centered" id="s14">
+<div class="slide breathing centered" id="s16">
   <p class="breathing-text anim">El mejor momento para empezar fue ayer.<br>El segundo mejor momento es <span style="color:var(--dorado);">hoy</span>.</p>
 </div>
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 15 — TIPOS DE TRABAJO: OVERVIEW
+     SLIDE 17 — TIPOS DE TRABAJO: OVERVIEW
 ══════════════════════════════════════════ -->
-<div class="slide" id="s15">
+<div class="slide" id="s17">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">Opciones laborales</div>
   <h1 class="anim">4 Formas de Trabajar<br>en <span class="dorado">Francia</span></h1>
@@ -1284,9 +1328,9 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 16 — TERMAS DETALLE
+     SLIDE 18 — TERMAS DETALLE
 ══════════════════════════════════════════ -->
-<div class="slide" id="s16">
+<div class="slide" id="s18">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim" style="font-weight:800; font-size:13px;">Opción 1</div>
   <h1 class="anim" style="font-size:clamp(36px,4.5vw,58px);">Centros <em>Termales</em></h1>
@@ -1319,9 +1363,9 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 17 — HOSPITAL PÚBLICO DETALLE
+     SLIDE 19 — HOSPITAL PÚBLICO DETALLE
 ══════════════════════════════════════════ -->
-<div class="slide" id="s17">
+<div class="slide" id="s19">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="badge anim">⭐ La Recomendada</div>
   <div class="label anim" style="font-weight:800; font-size:13px;">Opción 2</div>
@@ -1358,9 +1402,9 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 18 — CENTRO DE REEDUCACIÓN
+     SLIDE 20 — CENTRO DE REEDUCACIÓN
 ══════════════════════════════════════════ -->
-<div class="slide" id="s18">
+<div class="slide" id="s20">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim" style="font-weight:800; font-size:13px;">Opción 3</div>
   <h1 class="anim" style="font-size:clamp(34px,4.2vw,54px);">Centro de<br><em>Reeducación</em></h1>
@@ -1378,9 +1422,9 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 19 — LIBERAL (AUTÓNOMO)
+     SLIDE 21 — LIBERAL (AUTÓNOMO)
 ══════════════════════════════════════════ -->
-<div class="slide" id="s19">
+<div class="slide" id="s21">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim" style="font-weight:800; font-size:13px;">Opción 4</div>
   <h1 class="anim" style="font-size:clamp(34px,4.2vw,54px);">Liberal <em>(Autónomo)</em></h1>
@@ -1413,9 +1457,9 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 20 — COMPARATIVA SALARIAL
+     SLIDE 22 — COMPARATIVA SALARIAL
 ══════════════════════════════════════════ -->
-<div class="slide" id="s20">
+<div class="slide" id="s22">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">Comparativa</div>
   <h1 class="anim" style="font-size:clamp(34px,4.2vw,54px);">Comparativa <span class="dorado">Salarial</span></h1>
@@ -1450,9 +1494,9 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 21 — MAPA DE FRANCIA
+     SLIDE 23 — MAPA DE FRANCIA
 ══════════════════════════════════════════ -->
-<div class="slide" id="s21">
+<div class="slide" id="s23">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">Destinos</div>
   <h1 class="anim" style="font-size:clamp(34px,4.2vw,54px);">¿Dónde Trabajar<br>en <span class="dorado">Francia</span>?</h1>
@@ -1503,18 +1547,18 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 22 — BREATHING SLIDE (RAFA)
+     SLIDE 24 — BREATHING SLIDE (RAFA)
 ══════════════════════════════════════════ -->
-<div class="slide breathing centered" id="s22">
+<div class="slide breathing centered" id="s24">
   <p class="breathing-text anim" style="font-size:clamp(24px,3.5vw,44px);">Me fui con 23 años. He viajado a Perú, Egipto, Vietnam. Me he comprado una casa en España.<br><span style="color:var(--dorado);">Francia me lo ha dado todo.</span></p>
   <p class="breathing-sub anim">— Rafa</p>
 </div>
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 23 — VACACIONES Y CALIDAD DE VIDA
+     SLIDE 25 — VACACIONES Y CALIDAD DE VIDA
 ══════════════════════════════════════════ -->
-<div class="slide" id="s23">
+<div class="slide" id="s25">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">Calidad de vida</div>
   <div class="numero-hero accent anim" style="font-size:clamp(60px,9vw,110px);">8 <span class="unidad">semanas</span></div>
@@ -1536,9 +1580,9 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 24 — LO QUE NADIE TE CUENTA
+     SLIDE 26 — LO QUE NADIE TE CUENTA
 ══════════════════════════════════════════ -->
-<div class="slide" id="s24">
+<div class="slide" id="s26">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">Transparencia total</div>
   <h1 class="anim">Lo Que Nadie<br><em>Te Cuenta</em></h1>
@@ -1557,17 +1601,17 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 25 — BREATHING SLIDE
+     SLIDE 27 — BREATHING SLIDE
 ══════════════════════════════════════════ -->
-<div class="slide breathing centered" id="s25">
+<div class="slide breathing centered" id="s27">
   <p class="breathing-text anim">En la vida, siempre que ganas algo, pierdes algo.<br>Pero lo que ganas en Francia<br><span style="color:var(--dorado);">merece cada sacrificio.</span></p>
 </div>
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 26 — CÓMO TE AYUDAMOS
+     SLIDE 28 — CÓMO TE AYUDAMOS
 ══════════════════════════════════════════ -->
-<div class="slide" id="s26">
+<div class="slide" id="s28">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">Fisio en Francia</div>
   <h1 class="anim" style="font-size:clamp(34px,4.2vw,54px);">Dos Formas de <span class="dorado">Empezar</span></h1>
@@ -1599,9 +1643,9 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 27 — LA COMUNIDAD
+     SLIDE 29 — LA COMUNIDAD
 ══════════════════════════════════════════ -->
-<div class="slide" id="s27">
+<div class="slide" id="s29">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">Lo más importante</div>
   <h1 class="anim">No Llegarás <span class="dorado">Solo/a</span></h1>
@@ -1636,16 +1680,16 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 28 — BREATHING SLIDE
+     SLIDE 30 — BREATHING SLIDE
 ══════════════════════════════════════════ -->
-<div class="slide breathing centered" id="s28">
+<div class="slide breathing centered" id="s30">
   <p class="breathing-text anim">Mi objetivo es que nadie llegue a Francia y se sienta solo. <span style="color:var(--dorado);">Nadie.</span></p>
   <p class="breathing-sub anim">— Rafa</p>
 </div>
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 28B — EL ECOSISTEMA
+     SLIDE 30B — EL ECOSISTEMA
 ══════════════════════════════════════════ -->
 <div class="slide" id="s28b">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
@@ -1682,9 +1726,9 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 29 — PRÓXIMOS PASOS / TIMELINE
+     SLIDE 31 — PRÓXIMOS PASOS / TIMELINE
 ══════════════════════════════════════════ -->
-<div class="slide" id="s29">
+<div class="slide" id="s31">
   <div class="logo-mark"><img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia"></div>
   <div class="label anim">Tu plan de acción</div>
   <h1 class="anim" style="font-size:clamp(32px,4vw,50px); margin-bottom:0;">Tu Hoja de <span class="dorado">Ruta</span></h1>
@@ -1746,9 +1790,9 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 30 — CIERRE / CTA
+     SLIDE 32 — CIERRE / CTA
 ══════════════════════════════════════════ -->
-<div class="slide dark-deep" id="s30">
+<div class="slide dark-deep" id="s32">
   <!-- Centered logo at top -->
   <img src="./assets/logo-fisio-en-francia.png" alt="Fisio en Francia" class="anim" style="width:150px; height:auto; margin-bottom:20px; position:relative; z-index:1;">
   <h1 class="anim" style="font-size:clamp(30px,4vw,52px);">¿Preparado/a Para Dar el <span class="dorado">Salto</span>?</h1>
