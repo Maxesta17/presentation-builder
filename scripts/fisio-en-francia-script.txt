@@ -1,0 +1,378 @@
+FISIO EN FRANCIA — SCRIPT PARA PRESENTACIÓN WEBINAR
+====================================================
+Identidad visual: Fondo #3B6094 (azul marino), Acento #E9BB65 (dorado cálido)
+Tipografía headlines: Playfair Display (bold, serif). Subtexto: Inter o Source Sans 3.
+Logo: Fisio en Francia en SVG blanco sobre fondo azul marino.
+Estilo: Profesional, cercano, directo. Mismo framework de animaciones que Suiza.
+
+NOTA PARA CLAUDE CODE: Usar el mismo sistema de animaciones variadas por slide del style-reference. Breathing slides = fondo oscuro sin logo, solo frase de impacto centrada. Todos los avatares con placeholder SVG y comentario HTML para sustituir por foto real.
+
+=====================================
+
+[SLIDE 1 — PORTADA]
+Tipo: Portada con animación de entrada
+Título principal: "Tu Carrera Profesional en Francia"
+Subtítulo: "Ser fisioterapeuta en Francia es más que un trabajo, es una experiencia de vida"
+Elemento visual: Silueta del skyline de París (Eiffel, tejados) en trazo dorado sutil
+Logo: Fisio en Francia (SVG blanco, esquina inferior)
+Texto inferior: "Webinar Informativo · Fisio en Francia"
+
+[SLIDE 2 — QUIÉN ES RAFA]
+Tipo: Presentación personal con avatar
+<!-- AVATAR: Sustituir por foto real de Rafa -->
+Nombre: Rafael Valencia Chulián — Fisioterapeuta
+Cargo: Fundador y CEO de Fisio en Francia
+Bullets con iconos:
+• Gaditano. Estudió en Sevilla. En Francia desde 2019.
+• Montpellier → París → Antillas Francesas (Guadalupe)
+• +5 años de experiencia en hospitales públicos, liberal y ultramar
+• "Tras vivir el proceso de trasladarse al extranjero, se dedica a ayudar a otros fisioterapeutas a mejorar sus condiciones laborales y calidad de vida"
+Tono: "De Cádiz al Caribe francés, pasando por hospitales y clínicas de toda Francia"
+
+[SLIDE 3 — BREATHING SLIDE]
+Tipo: Breathing slide (fondo oscuro completo, sin logo)
+Frase: "Si te quedas en España… ¿qué va a cambiar?"
+Subtexto pequeño: "— La pregunta que lo empezó todo"
+
+[SLIDE 4 — LA REALIDAD EN ESPAÑA]
+Tipo: Slide de impacto con datos
+Título: "El Techo de Cristal"
+Contenido con iconos/métricas destacadas:
+• Sueldo medio fisioterapeuta en España: 1.200–1.300 € netos
+• Gasto en formación post-universidad (primeros 5 años): 8.000–10.000 €
+• Imposible emanciparse con esos sueldos
+• Máster de neuro, punción seca, neuromodulación, yoga… y el sueldo no sube
+Frase de cierre en dorado: "Por mucho que te formes, por mucho que aprendas… el sueldo no cambia."
+
+[SLIDE 5 — ¿POR QUÉ FRANCIA?]
+Tipo: Comparativa visual lado a lado
+Título: "¿Por qué hay tanto trabajo en Francia?"
+Columna izquierda — España:
+• El paciente paga el tratamiento de su bolsillo
+• 2 de cada 10 personas van al fisio
+• Poca demanda → pocos puestos → sueldos bajos
+
+Columna derecha — Francia:
+• La fisioterapia la paga el Estado (Sécurité Sociale)
+• 6 de cada 10 personas van al fisio
+• Demanda brutal → clínicas desbordadas → trabajo garantizado
+
+Elemento visual: Gráfico de barras comparativo 2/10 vs 6/10
+
+[SLIDE 6 — DATO IMPACTANTE]
+Tipo: Slide de dato único grande
+Número grande animado: "30%"
+Texto debajo: "de los fisioterapeutas en Francia NO son franceses"
+Detalle: "17% belgas + 13% españoles. La demanda supera con creces la oferta local."
+
+[SLIDE 7 — BREATHING SLIDE]
+Tipo: Breathing slide (fondo oscuro, sin logo)
+Frase: "En Francia, cuando un neurocirujano opera… es el fisioterapeuta quien decide si el paciente puede irse a casa."
+Subtexto: "— Así de valorada está nuestra profesión"
+
+[SLIDE 8 — FISIOTERAPIA: UNA PROFESIÓN DE ÉLITE EN FRANCIA]
+Tipo: Slide informativa con iconos
+Título: "Una Profesión de Élite"
+Contenido:
+• Misma nota de corte que Medicina
+• Médicos y fisios comparten el primer año de carrera
+• Los médicos consultan a los fisios para dar altas hospitalarias
+• La terapia manual española se valora enormemente: "Haces un tratamiento básico y te dicen que eres el mejor fisio que han visto en su vida"
+Frase en dorado: "Los fisioterapeutas españoles estamos mil veces mejor formados que los franceses."
+
+[SLIDE 9 — EL PROCESO DE HOMOLOGACIÓN — OVERVIEW]
+Tipo: Slide con timeline horizontal (3 fases)
+Título: "El Camino hacia Francia"
+Subtítulo: "Proceso de homologación: 6-8 meses de media"
+
+Timeline con 3 nodos:
+1. 📋 Reunir Documentación → Crear dossier administrativo
+2. 📄 Traducción Jurada → Coste: 200-300 € (recuperables con beca de 400 €)
+3. ✈️ Envío a Francia → El comité evalúa tu dossier y responde
+
+Nota destacada en caja dorada: "El proceso es GRATUITO (a diferencia de Suiza: 1.500 €) y NO caduca nunca."
+
+[SLIDE 10 — HOMOLOGACIÓN: DETALLE IMPORTANTE]
+Tipo: Slide informativa con alerta
+Título: "El Tema de las Horas Prácticas"
+Contenido:
+• Francia exige ~1.500 horas de prácticas universitarias
+• En España: entre 580 y 1.250 horas según la universidad
+• Si hay déficit → te mandan a hacer un "stage" (prácticas)
+• Duración habitual: 10-14 semanas
+• Las prácticas NO son remuneradas, pero muchos centros ofrecen alojamiento y comida incluidos
+
+Caja de consejo: "La experiencia profesional post-grado ayuda, pero no sustituye las horas prácticas universitarias. Las prácticas extracurriculares DURANTE el grado sí cuentan."
+
+[SLIDE 11 — EL STAGE NO ES EL FIN DEL MUNDO]
+Tipo: Slide con enfoque positivo
+Título: "Si te mandan al Stage… aprovéchalo"
+Bullets con iconos positivos (✓):
+✓ Mejoras tu francés sin la presión de ser el responsable
+✓ Muchos centros incluyen alojamiento gratuito
+✓ Comes en el hospital (casi sin gasto)
+✓ Te adaptas a la cultura y al sistema sanitario
+✓ Cuando empiezas a trabajar de verdad, ya estás preparado/a
+
+Frase en dorado: "No es ideal, pero puede ser la mejor inversión para tu adaptación."
+
+[SLIDE 12 — BREATHING SLIDE]
+Tipo: Breathing slide (fondo oscuro, sin logo)
+Frase: "Homologa ahora, decide después. La autorización no caduca."
+Subtexto: "— Si te pica la curiosidad, no tienes nada que perder"
+
+[SLIDE 13 — ⚠️ ALERTA 2027]
+Tipo: Slide de alerta/urgencia
+Título: "Cambio de Ley en 2027"
+Icono de alerta grande
+Contenido:
+• A partir de 2027: los fisios franceses estarán OBLIGADOS a trabajar 1-2 años en hospital antes de ser autónomos
+• Consecuencia: los hospitales se llenarán de franceses → menos plazas para españoles en ciudades grandes
+• No es catastrófico (sigue habiendo muchísimo trabajo), pero será más competitivo
+
+Caja destacada en dorado: "Todos los que homologuéis ANTES de 2027 tendréis ventaja. El momento es AHORA."
+
+[SLIDE 14 — BREATHING SLIDE]
+Tipo: Breathing slide (fondo oscuro, sin logo)
+Frase: "El mejor momento para empezar fue ayer. El segundo mejor momento es hoy."
+
+[SLIDE 15 — TIPOS DE TRABAJO: OVERVIEW]
+Tipo: Slide con 4 tarjetas/cards
+Título: "4 Formas de Trabajar en Francia"
+4 cards con icono + título:
+1. 🏔️ Termas (Centros Termales)
+2. 🏥 Hospital Público
+3. 🔄 Centro de Reeducación
+4. 💼 Liberal (Autónomo)
+
+Texto inferior: "Vamos a ver cada una en detalle →"
+
+[SLIDE 16 — TERMAS: DETALLE]
+Tipo: Slide detalle con métricas
+Título: "Opción 1: Centros Termales"
+Ideal para: Quien tiene poco francés o quiere ahorrar rápido
+
+Métricas destacadas:
+💰 2.000–2.200 € netos (alojamiento incluido)
+🕐 6:00 a 12:30–13:00
+🏠 Ahorro fácil: ~1.500 €/mes
+📅 Lunes a viernes (algún sábado)
+
+Contenido:
+• Masajes terapéuticos + reeducación en piscina
+• Balnearios en pueblos naturales, funcionan por temporadas (febrero a noviembre)
+• Pueblos de montaña: ocio natural, senderismo, piscinas naturales
+• No necesitas hablar mucho francés — opción más seleccionada para iniciarse
+• Trabajo repetitivo pero sin estrés ni responsabilidad
+
+Veredicto: "Perfecto para empezar y ahorrar. No para siempre."
+
+[SLIDE 17 — HOSPITAL PÚBLICO: DETALLE]
+Tipo: Slide detalle con métricas (slide destacada — la favorita de Rafa)
+Título: "Opción 2: Hospital Público"
+Badge: "⭐ La Recomendada"
+
+Métricas destacadas:
+💰 2.200 € netos + 13ª paga + guardias extra
+🕐 8:30 a 16:30
+👥 8-10 pacientes/día (máx. 12-13)
+🏖️ 8 SEMANAS de vacaciones/año
+📚 Formaciones pagadas por el hospital
+
+Extras destacados:
+• Plaza fija al primer año (funcionario/a)
+• Posibilidad de excedencia y traslado
+• Equipo multidisciplinar: médicos, ergoterapeutas, ortofonistas, enfermeros
+• Guardias de fin de semana = horas extras bien pagadas
+
+Caja dorada: "¡Los puntos que acumulas en hospital público francés CUENTAN para la bolsa de empleo público en España!"
+
+[SLIDE 18 — CENTRO DE REEDUCACIÓN: DETALLE]
+Tipo: Slide detalle
+Título: "Opción 3: Centro de Reeducación"
+Subtítulo: "El paso intermedio entre hospital y autonomía"
+
+Contenido:
+• Pacientes en fase subaguda (post-hospitalización)
+• Tratamiento más lúdico y dinámico que en hospital
+• Ambiente más relajado: el paciente puede salir, recibir visitas
+• Predomina el ejercicio terapéutico
+• Si es público: mismas condiciones que hospital
+• Si es privado: no sumas puntos para bolsa española, pero el sueldo puede ser mejor
+
+[SLIDE 19 — LIBERAL (AUTÓNOMO): DETALLE]
+Tipo: Slide detalle con nota de precaución
+Título: "Opción 4: Liberal (Autónomo)"
+
+Métricas:
+💰 Facturación: ~10.000 € brutos/mes
+💰 Neto real: 2.500–4.000 € (después de pagar clínica + impuestos)
+💰 Techo: hasta 5.000–6.000 € netos en zonas/clínicas top
+
+Contenido:
+• Trabajas en una clínica con agenda llena de pacientes
+• No buscas pacientes: ya están ahí
+• Pagas un % a la clínica por instalaciones y cartera de pacientes
+• ~50% se va en impuestos
+
+Caja de aviso: "⚠️ Rafa NO lo recomienda para empezar. Primero hospital o reeducación para adaptarte."
+
+[SLIDE 20 — COMPARATIVA SALARIAL]
+Tipo: Gráfico de barras animado
+Título: "Comparativa Salarial: España vs Francia"
+Barras comparativas:
+• España asalariado: 1.200 €
+• Francia termas: 2.200 € (+alojamiento)
+• Francia hospital: 2.200 € (+guardias +13ª paga)
+• Francia liberal: 2.500–4.000 €
+Nota al pie: "Todos los importes son netos mensuales"
+
+[SLIDE 21 — MAPA DE FRANCIA]
+Tipo: Slide visual con mapa
+Título: "¿Dónde Trabajar en Francia?"
+Mapa de Francia con zonas marcadas:
+
+🔴 Zona caliente (muy demandada, difícil entrar de primeras):
+Toulouse, Burdeos, Montpellier, Niza, Marsella, Grenoble, Lyon, Estrasburgo, París
+
+🟢 Zona "alfombra roja" (te reciben con los brazos abiertos):
+Tours, Angers, Limoges, La Rochelle, Nantes, Rennes, zona centro
+
+🏝️ Territorios de ultramar:
+Córcega, Isla de Reunión, Guadalupe, Martinica
+
+Frase: "En el centro de Francia hay tanto trabajo que te ponen alfombra roja cuando llegas."
+
+[SLIDE 22 — BREATHING SLIDE]
+Tipo: Breathing slide (fondo oscuro, sin logo)
+Frase: "Me fui con 23 años. He viajado a Perú, Egipto, Vietnam. Me he comprado una casa en España. Francia me lo ha dado todo."
+Subtexto: "— Rafa"
+
+[SLIDE 23 — VACACIONES Y CALIDAD DE VIDA]
+Tipo: Slide de impacto con icono grande
+Título: "8 Semanas de Vacaciones"
+Subtítulo: "Sí, has leído bien."
+
+Contenido visual (iconos de calendario):
+• 1 semana en febrero
+• 1 semana en abril
+• 2 semanas en julio
+• 1 semana en septiembre
+• 1 semana en noviembre
+• + 2 semanas más donde tú quieras
+
+Dato extra: "En Francia los días de vacaciones se cuentan por días LABORABLES, no naturales. Un festivo dentro de tus vacaciones NO te consume día."
+
+[SLIDE 24 — LO QUE NADIE TE CUENTA: LAS DIFICULTADES]
+Tipo: Slide honesta/transparente
+Título: "Lo Que Nadie Te Cuenta"
+Subtítulo: "Ser honesto es parte del proceso"
+
+Bullets con iconos:
+• 6-8 meses de papeleo constante
+• Inversión económica inicial (traducciones, mudanza)
+• Salir de tu zona de confort: nuevo país, nuevo idioma, nueva cultura
+• Echarás de menos a tu familia y amigos
+• El clima no es Cádiz
+• Algunas relaciones se pierden por el camino
+
+Frase en dorado: "Pero si superas todo eso… te das cuenta de que es la mejor decisión que has tomado."
+
+[SLIDE 25 — BREATHING SLIDE]
+Tipo: Breathing slide (fondo oscuro, sin logo)
+Frase: "En la vida, siempre que ganas algo, pierdes algo. Pero lo que ganas en Francia merece cada sacrificio."
+
+[SLIDE 26 — FISIO EN FRANCIA: CÓMO TE AYUDAMOS]
+Tipo: Slide con dos columnas (opciones)
+Título: "Dos Formas de Empezar"
+
+Columna izquierda — VÍA GRATUITA:
+• Tú gestionas tu documentación y homologación
+• Cuando tengas la autorización, nos envías tu CV
+• Nosotros te preparamos 5 entrevistas de trabajo
+• Sin coste para ti (la clínica nos paga)
+
+Columna derecha — ASESORAMIENTO PREMIUM (767 € en 3 pagos):
+• Guía paso a paso de toda la documentación
+• Verificación documento a documento
+• Gestión de beca de traducciones (te devuelven ~400 €)
+• Búsqueda de prácticas con alojamiento si te mandan stage
+• Ayuda con banco, teléfono, colegiación, carta vital, Sécurité Sociale
+• Acceso al grupo de WhatsApp con +100 fisios españoles en Francia
+• Te conectamos con fisios de tu ciudad de destino ANTES de irte
+
+[SLIDE 27 — LA COMUNIDAD]
+Tipo: Slide emocional con testimonios
+Título: "No Llegarás Solo/a"
+Subtítulo: "Lo más importante: la comunidad"
+
+Contenido:
+• Grupo de WhatsApp con +100 fisioterapeutas españoles en Francia
+• Te conectamos con compañeros de tu ciudad ANTES de salir de España
+• "Mi objetivo es que el primer día ya estés en el parque haciendo un picnic con tres españoles"
+
+<!-- AVATARES: Sustituir por fotos reales de testimonios de Instagram -->
+Testimonios placeholder (3 avatares con citas cortas):
+• Avatar 1: "Llegué un jueves y el viernes ya tenía plan con españoles"
+• Avatar 2: "El grupo de WhatsApp me salvó las primeras semanas"
+• Avatar 3: "Nunca me sentí solo gracias a la comunidad"
+
+[SLIDE 28 — BREATHING SLIDE]
+Tipo: Breathing slide (fondo oscuro, sin logo)
+Frase: "Mi objetivo es que nadie llegue a Francia y se sienta solo. Nadie."
+Subtexto: "— Rafa"
+
+[SLIDE 28B — EL ECOSISTEMA FISIO EN FRANCIA]
+Tipo: Slide con 4 tarjetas de servicios
+Título: "Un Acompañamiento Integral"
+Subtítulo: "No solo te ayudamos a llegar. Te ayudamos a quedarte."
+
+4 cards:
+1. 📋 Homologación y Traducción → Te guiamos con la documentación y te conectamos con nuestra traductora jurada oficial
+2. 💼 Búsqueda de Empleo → Ofertas en hospitales, centros de reeducación, termas, liberal y ultramar
+3. 🗣️ Cursos de Idiomas → Francés sanitario adaptado a fisioterapeutas. Academia Innova Academy
+4. 🏠 Ayuda a la Instalación → Banco, teléfono, colegiación, carta vital, Sécurité Sociale, alojamiento
+
+Nota: "También existe un programa europeo de becas para buscar empleo en Francia: cubre traducciones, aprendizaje de francés y alojamiento."
+
+[SLIDE 29 — PRÓXIMOS PASOS / TIMELINE]
+Tipo: Timeline vertical o roadmap
+Título: "Tu Hoja de Ruta"
+
+Pasos con iconos:
+1. 📩 Escríbenos por Instagram o web → Consulta inicial gratuita
+2. 📋 Septiembre/Enero: Apertura de plazas de asesoramiento
+3. 📄 Reunimos tu documentación (1-2 meses)
+4. 🔄 Traducción jurada + envío a Francia
+5. ⏳ Espera de respuesta del comité (3-5 meses)
+6. ✅ Autorización o stage → ¡A trabajar!
+7. 🇫🇷 Bienvenido/a a Francia
+
+Nota: "Aunque no tengas prisa, empieza la homologación YA. No caduca y 2027 está a la vuelta de la esquina."
+
+[SLIDE 30 — CIERRE / CTA]
+Tipo: Slide de cierre con call-to-action
+Título: "¿Preparado/a Para Dar el Salto?"
+Subtítulo: "Tu nueva vida profesional empieza con un mensaje"
+
+Redes/contacto:
+📱 Instagram: @fisioenfrancia
+🌐 Web: fisioenfrancia.es
+📧 Email: contacto@fisioenfrancia.es
+📩 Escríbenos un DM o reserva tu consulta gratuita en la web
+
+Otras cuentas:
+• @fisioensuiza — Para Suiza (fisioensuiza.com)
+• @selectivejob — Otras profesiones sanitarias (enfermería, medicina, odontología…)
+• @innovaacademy — Cursos de francés y alemán
+
+Recurso gratuito: "Descarga nuestra Guía de Inicio gratuita en fisioenfrancia.es con todo lo que necesitas para empezar"
+
+Logo grande: Fisio en Francia
+Frase final en dorado: "No es solo un trabajo. Es una oportunidad de vida."
+
+NOTA ADICIONAL PARA CLAUDE CODE: Rafa menciona que Selective Job (@selectivejob) es para cualquier profesión sanitaria que no sea fisioterapia: enfermería, medicina, odontología. Ideal si el asistente tiene pareja o amigos de otras profesiones que quieran emigrar. También mencionar que la colegiación en Francia se hace en el "Conseil National de l'Ordre des Masseurs-Kinésithérapeutes" y que los bancos más usados por expatriados son BNP Paribas, Société Générale y Crédit Agricole. Nivel de francés recomendado: B1-B2 (no necesita estar acreditado oficialmente).
+
+=====================================
+FIN DEL SCRIPT
+=====================================

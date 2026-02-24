@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fisio en Suiza — Style Reference v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Fraunces:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --granate:       #8B1A1A;
+  --granate-deep:  #6B1212;
+  --granate-light: #A82020;
+  --crema:         #F5EDD8;
+  --crema-suave:   rgba(245, 237, 216, 0.75);
+  --crema-dimmed:  rgba(245, 237, 216, 0.45);
+  --crema-border:  rgba(245, 237, 216, 0.18);
+  --blanco:        #FFFFFF;
+  --oro:           #C9A84C;
+  --oro-suave:     rgba(201, 168, 76, 0.20);
+  --overlay-dark:  rgba(80, 8, 8, 0.45);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: #3a0a0a;
+  overflow: hidden;
+  cursor: default;
+}
+
+/* ─── SLIDE BASE ──────────────────────────────────── */
+.slide {
+  position: absolute;
+  inset: 0;
+  background: var(--granate);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 68px 96px 88px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+  overflow: hidden;
+}
+.slide.active { opacity: 1; pointer-events: all; }
+.slide.centered { align-items: center; text-align: center; }
+
+/* Grain texture overlay */
+.slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.slide > * { position: relative; z-index: 1; }
+
+/* Slide variants */
+.slide.dark-deep    { background: var(--granate-deep); }
+.slide.light-accent { background: var(--crema); }
+.slide.light-accent h1, .slide.light-accent h2,
+.slide.light-accent p, .slide.light-accent .label { color: var(--granate-deep); }
+.slide.light-accent h2 { color: rgba(107, 18, 18, 0.65); }
+
+/* ─── LOGO MARK (top right) ───────────────────────── */
+.logo-mark {
+  position: absolute;
+  top: 32px;
+  right: 44px;
+  width: 56px;
+  height: 56px;
+  z-index: 10;
+  opacity: 0.55;
+}
+.logo-mark svg { width: 100%; height: 100%; }
+
+/* ─── TYPOGRAPHY ──────────────────────────────────── */
+h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(44px, 5.8vw, 78px);
+  font-weight: 800;
+  color: var(--crema);
+  line-height: 1.0;
+  letter-spacing: -1px;
+  max-width: 900px;
+}
+h1 em {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--crema);
+  opacity: 0.8;
+}
+h1 .oro { color: var(--oro); }
+
+h2 {
+  font-size: clamp(15px, 1.7vw, 20px);
+  font-weight: 400;
+  color: var(--crema-dimmed);
+  margin-top: 16px;
+  max-width: 680px;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--crema-dimmed);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--oro);
+  flex-shrink: 0;
+}
+
+/* ─── DIVIDER ─────────────────────────────────────── */
+.divider {
+  width: 48px;
+  height: 2px;
+  background: var(--oro);
+  margin: 22px 0;
+  border-radius: 2px;
+}
+.centered .divider { margin: 22px auto; }
+
+/* ─── NUMBER HERO ─────────────────────────────────── */
+.numero-hero {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(80px, 12vw, 140px);
+  font-weight: 900;
+  line-height: 0.9;
+  color: var(--crema);
+  letter-spacing: -4px;
+}
+.numero-hero .unidad {
+  font-size: 0.42em;
+  font-weight: 500;
+  letter-spacing: -1px;
+  opacity: 0.7;
+  vertical-align: baseline;
+}
+.numero-hero.accent { color: var(--oro); }
+
+/* ─── CARDS ───────────────────────────────────────── */
+.card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--crema-border);
+  border-radius: 14px;
+  padding: 22px 26px;
+  text-align: left;
+  backdrop-filter: blur(4px);
+}
+.card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--crema);
+  margin-bottom: 7px;
+  line-height: 1.3;
+}
+.card p {
+  font-size: 14px;
+  color: var(--crema-dimmed);
+  line-height: 1.6;
+}
+.card.oro-border { border-top: 2px solid var(--oro); }
+.card.crema-border { border-left: 3px solid var(--crema-suave); }
+
+/* Light slide cards */
+.slide.light-accent .card {
+  background: rgba(107,18,18,0.07);
+  border-color: rgba(107,18,18,0.15);
+}
+.slide.light-accent .card h3 { color: var(--granate-deep); }
+.slide.light-accent .card p  { color: rgba(107,18,18,0.6); }
+
+/* ─── GRIDS ───────────────────────────────────────── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 28px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 28px;
+}
+.grid-2.centered, .grid-3.centered { margin-left: auto; margin-right: auto; }
+
+/* ─── COMPARATIVA ─────────────────────────────────── */
+.comparativa {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 880px;
+  margin-top: 30px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--crema-border);
+}
+.comp-col { padding: 28px 32px; }
+.comp-col.left {
+  background: rgba(0,0,0,0.25);
+  border-right: 1px solid var(--crema-border);
+}
+.comp-col.right {
+  background: rgba(255,255,255,0.05);
+}
+.comp-header {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--crema-border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.comp-col.left  .comp-header { color: var(--crema-dimmed); }
+.comp-col.right .comp-header { color: var(--crema-suave); }
+.comp-row {
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(245,237,216,0.08);
+  font-size: 15px;
+  color: var(--crema-suave);
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.comp-row:last-child { border-bottom: none; }
+.comp-row.highlight {
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--crema);
+}
+.comp-col.left  .comp-row.highlight { color: rgba(245,237,216,0.5); text-decoration: line-through; }
+.comp-col.right .comp-row.highlight { color: var(--oro); }
+
+/* ─── PASOS NUMERADOS ─────────────────────────────── */
+.pasos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 820px;
+  margin-top: 28px;
+}
+.paso {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 18px 22px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--crema-border);
+  border-radius: 12px;
+  transition: background 0.2s;
+}
+.paso:hover { background: rgba(255,255,255,0.09); }
+.paso-num {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: var(--oro-suave);
+  border: 1px solid rgba(201,168,76,0.4);
+  color: var(--oro);
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.paso h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--crema);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.paso p {
+  font-size: 13px;
+  color: var(--crema-dimmed);
+  line-height: 1.5;
+}
+.paso .badge-tiempo {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--oro);
+  background: var(--oro-suave);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 100px;
+  padding: 2px 10px;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+/* ─── CHECKLIST ───────────────────────────────────── */
+.checklist {
+  list-style: none;
+  text-align: left;
+  width: 100%;
+  max-width: 680px;
+  margin-top: 24px;
+}
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--crema-border);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--crema-suave);
+  line-height: 1.45;
+}
+.checklist li:last-child { border-bottom: none; }
+.checklist li .check {
+  color: var(--oro);
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.centered .checklist { margin-left: auto; margin-right: auto; }
+
+/* ─── STAT PILLS ──────────────────────────────────── */
+.stat-row {
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.centered .stat-row { justify-content: center; }
+.stat-pill {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid var(--crema-border);
+  border-radius: 100px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.stat-pill .val {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--crema);
+}
+.stat-pill .desc {
+  font-size: 13px;
+  color: var(--crema-dimmed);
+  line-height: 1.3;
+  max-width: 120px;
+}
+
+/* ─── BADGE IDIOMAS ───────────────────────────────── */
+.idioma-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--crema-border);
+  border-top: 2px solid var(--oro);
+  border-radius: 14px;
+  padding: 26px 22px;
+  text-align: center;
+}
+.idioma-flag { font-size: 36px; margin-bottom: 10px; }
+.idioma-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--crema);
+  margin-bottom: 6px;
+}
+.idioma-card p {
+  font-size: 13px;
+  color: var(--crema-dimmed);
+  line-height: 1.5;
+}
+
+/* ─── ALERTA BOX ──────────────────────────────────── */
+.alerta {
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.35);
+  border-radius: 12px;
+  padding: 16px 22px;
+  margin-top: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 820px;
+  text-align: left;
+}
+.alerta-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.alerta-text {
+  font-size: 14px;
+  color: var(--crema-suave);
+  line-height: 1.5;
+}
+.alerta-text strong { color: var(--oro); }
+
+/* ─── CTA BUTTON ──────────────────────────────────── */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--crema);
+  color: var(--granate-deep);
+  font-family: 'Outfit', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: 100px;
+  text-decoration: none;
+  margin-top: 30px;
+  letter-spacing: 0.2px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.3);
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 36px rgba(0,0,0,0.4);
+}
+.cta-btn .arrow {
+  font-size: 20px;
+  transition: transform 0.2s;
+}
+.cta-btn:hover .arrow { transform: translateX(4px); }
+
+.cta-secondary {
+  font-size: 13px;
+  color: var(--crema-dimmed);
+  margin-top: 14px;
+  display: block;
+}
+
+/* ─── ANIMATIONS ──────────────────────────────────── */
+.anim {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.anim.up { transform: translateY(18px); }
+.anim.left-in { transform: translateX(-24px); }
+.anim.visible { opacity: 1; transform: translate(0, 0); }
+
+/* Stagger delays */
+.anim-group > *:nth-child(1) .anim, .anim:nth-child(1) { transition-delay: 0.06s; }
+.anim-group > *:nth-child(2) .anim, .anim:nth-child(2) { transition-delay: 0.14s; }
+.anim-group > *:nth-child(3) .anim, .anim:nth-child(3) { transition-delay: 0.22s; }
+.anim-group > *:nth-child(4) .anim, .anim:nth-child(4) { transition-delay: 0.30s; }
+.anim-group > *:nth-child(5) .anim, .anim:nth-child(5) { transition-delay: 0.38s; }
+.anim-group > *:nth-child(6) .anim, .anim:nth-child(6) { transition-delay: 0.46s; }
+.anim-group > *:nth-child(7) .anim, .anim:nth-child(7) { transition-delay: 0.54s; }
+
+/* ─── PROGRESS BAR ────────────────────────────────── */
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: var(--oro);
+  transition: width 0.4s ease;
+  z-index: 100;
+}
+
+/* ─── NAVIGATION DOTS ─────────────────────────────── */
+.nav-dots {
+  position: fixed;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  z-index: 100;
+  background: rgba(60,0,0,0.6);
+  backdrop-filter: blur(10px);
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--crema-border);
+}
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(245,237,216,0.25);
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s;
+}
+.dot.active {
+  background: var(--crema);
+  transform: scale(1.5);
+}
+.nav-hint {
+  position: fixed;
+  bottom: 24px; right: 32px;
+  font-size: 11px;
+  color: rgba(245,237,216,0.25);
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slide { padding: 50px 28px 70px; }
+  .grid-2, .grid-3, .comparativa { grid-template-columns: 1fr; }
+  h1 { font-size: clamp(34px, 8vw, 52px); }
+}
+@media (max-height: 700px) {
+  .slide { padding: 50px 80px 68px; gap: 8px; }
+  h1 { font-size: clamp(32px, 4.5vw, 56px); }
+}
+</style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progress"></div>
+
+<!-- LOGO SVG (reutilizar en cada slide) -->
+<template id="logoTpl">
+  <div class="logo-mark">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" stroke="#F5EDD8" stroke-width="2.5"/>
+      <path d="M18 66 L34 44 L46 56 L58 34 L72 52 L82 42" stroke="#F5EDD8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M58 34 L72 52 L82 42 L84 66" stroke="#F5EDD8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.5"/>
+    </svg>
+  </div>
+</template>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 1 — PORTADA
+══════════════════════════════════════════ -->
+<div class="slide dark-deep" id="s1">
+  <div class="logo-mark">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" stroke="#F5EDD8" stroke-width="2.5"/>
+      <path d="M18 66 L34 44 L46 56 L58 34 L72 52 L82 42" stroke="#F5EDD8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="label anim">Webinar · Fisio en Suiza</div>
+  <h1 class="anim">Fisioterapia<br>en Suiza</h1>
+  <div class="divider anim"></div>
+  <h2 class="anim" style="font-family:'Fraunces',serif; font-style:italic; font-size:clamp(18px,2.2vw,26px); color:var(--crema-suave); font-weight:300;">Da el gran salto profesional y económico</h2>
+  <div class="stat-row anim">
+    <div class="stat-pill">
+      <span class="val">35+</span>
+      <span class="desc">fisios ya en Suiza</span>
+    </div>
+    <div class="stat-pill">
+      <span class="val">×4</span>
+      <span class="desc">salario vs España</span>
+    </div>
+    <div class="stat-pill">
+      <span class="val">Rafa &amp; Paula</span>
+      <span class="desc">fisioterapeutas en activo</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 2 — CASOS PARTICULARES
+══════════════════════════════════════════ -->
+<div class="slide" id="s2">
+  <div class="logo-mark">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" stroke="#F5EDD8" stroke-width="2.5"/>
+      <path d="M18 66 L34 44 L46 56 L58 34 L72 52 L82 42" stroke="#F5EDD8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="label anim">Antes de empezar</div>
+  <h1 class="anim">Casos<br>particulares</h1>
+  <div class="divider anim"></div>
+  <div class="grid-2 anim" style="max-width:820px; margin-top:22px;">
+    <div class="card crema-border">
+      <h3>🎓 Estudiantes</h3>
+      <p>Sin título oficial (o supletorio pagado) no puedes iniciar el papeleo. Lo único que puedes adelantar es el idioma.</p>
+    </div>
+    <div class="card crema-border">
+      <h3>🌍 Fuera de Europa / LATAM</h3>
+      <p>Proceso más largo y estricto. Pueden exigir el B2 desde el principio. Aplica si estudiaste fuera aunque tengas nacionalidad europea.</p>
+    </div>
+  </div>
+  <div class="alerta anim">
+    <span class="alerta-icon">⚠️</span>
+    <div class="alerta-text">Si eres latinoamericano: <strong>sí se puede</strong>, pero los documentos son más exigentes y los tiempos más largos.</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 3 — POR QUÉ SUIZA
+══════════════════════════════════════════ -->
+<div class="slide" id="s3">
+  <div class="logo-mark">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" stroke="#F5EDD8" stroke-width="2.5"/>
+      <path d="M18 66 L34 44 L46 56 L58 34 L72 52 L82 42" stroke="#F5EDD8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="label anim">La diferencia clave</div>
+  <h1 class="anim">¿Por qué hay tanta<br><em>diferencia</em>?</h1>
+  <div class="comparativa anim">
+    <div class="comp-col left">
+      <div class="comp-header">🇪🇸 España</div>
+      <div class="comp-row">Sistema sanitario público</div>
+      <div class="comp-row">Alta competencia por plaza</div>
+      <div class="comp-row">Fisio = gasto de bolsillo</div>
+      <div class="comp-row">Poca demanda privada</div>
+      <div class="comp-row highlight">~1.400 € / mes</div>
+    </div>
+    <div class="comp-col right">
+      <div class="comp-header">🇨🇭 Suiza</div>
+      <div class="comp-row">Sistema privado integrado</div>
+      <div class="comp-row">Déficit estructural de fisios</div>
+      <div class="comp-row">Fisio dentro del seguro médico</div>
+      <div class="comp-row">Demanda constante y creciente</div>
+      <div class="comp-row highlight">~6.000 CHF / mes</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 4 — DATO IMPACTO (SALARIO)
+══════════════════════════════════════════ -->
+<div class="slide centered dark-deep" id="s4">
+  <div class="logo-mark">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" stroke="#F5EDD8" stroke-width="2.5"/>
+      <path d="M18 66 L34 44 L46 56 L58 34 L72 52 L82 42" stroke="#F5EDD8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <p class="label anim" style="justify-content:center;">Salario medio · fisioterapeuta empleado</p>
+  <div class="numero-hero accent anim">6.000 <span class="unidad">CHF/mes</span></div>
+  <div class="divider anim"></div>
+  <h2 class="anim" style="color:var(--crema-dimmed); font-size:clamp(14px,1.5vw,18px);">Equivalente a más de 6.500 € al tipo de cambio actual</h2>
+  <div class="stat-row anim" style="justify-content:center; margin-top:28px;">
+    <div class="stat-pill"><span class="val" style="color:var(--oro);">×4</span><span class="desc">más que en España</span></div>
+    <div class="stat-pill"><span class="val">26</span><span class="desc">días de vacaciones mínimos</span></div>
+    <div class="stat-pill"><span class="val">42h</span><span class="desc">jornada semanal máxima</span></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 5 — REQUISITO B2
+══════════════════════════════════════════ -->
+<div class="slide" id="s5">
+  <div class="logo-mark">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" stroke="#F5EDD8" stroke-width="2.5"/>
+      <path d="M18 66 L34 44 L46 56 L58 34 L72 52 L82 42" stroke="#F5EDD8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="label anim">Requisito imprescindible</div>
+  <h1 class="anim">Necesitas el <span class="oro">B2</span> certificado</h1>
+  <div class="divider anim"></div>
+  <div class="grid-3 anim" style="max-width:860px;">
+    <div class="idioma-card">
+      <div class="idioma-flag">🇩🇪</div>
+      <h3>Alemán</h3>
+      <p>Zona germanófona — mayor volumen de trabajo disponible</p>
+    </div>
+    <div class="idioma-card">
+      <div class="idioma-flag">🇫🇷</div>
+      <h3>Francés</h3>
+      <p>Suiza romanda — buena oferta de empleo hospitalario</p>
+    </div>
+    <div class="idioma-card">
+      <div class="idioma-flag">🇮🇹</div>
+      <h3>Italiano</h3>
+      <p>Cantón del Tesino — menos puestos, pero proceso igual</p>
+    </div>
+  </div>
+  <div class="alerta anim">
+    <span class="alerta-icon">💡</span>
+    <div class="alerta-text">Para europeos: tienes <strong>2 años de margen</strong> para conseguir el B2 desde que inicias el proceso · Para LATAM: pueden pedirlo desde el principio</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 6 — PROCESO PASO A PASO
+══════════════════════════════════════════ -->
+<div class="slide" id="s6">
+  <div class="logo-mark">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" stroke="#F5EDD8" stroke-width="2.5"/>
+      <path d="M18 66 L34 44 L46 56 L58 34 L72 52 L82 42" stroke="#F5EDD8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="label anim">El proceso completo</div>
+  <h1 class="anim">Paso a <em>paso</em></h1>
+  <div class="pasos anim">
+    <div class="paso">
+      <div class="paso-num">1</div>
+      <div>
+        <h3>Solicitud de homologación del título</h3>
+        <p>Envío de documentación al organismo suizo. Gestionado por el equipo de Fisio en Suiza.</p>
+        <span class="badge-tiempo">3–6 meses</span>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">2</div>
+      <div>
+        <h3>Aprendizaje del idioma · B1 → B2</h3>
+        <p>6 meses de clases incluidas gratuitamente en el programa. Opción de intensivo para B2 financiado.</p>
+        <span class="badge-tiempo">6–12 meses</span>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">3</div>
+      <div>
+        <h3>Búsqueda de empleo y firma de contrato</h3>
+        <p>El equipo gestiona activamente la búsqueda. Se negocia directamente con los empleadores.</p>
+        <span class="badge-tiempo">1–3 meses</span>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">4</div>
+      <div>
+        <h3>Llegada y establecimiento en Suiza</h3>
+        <p>Acompañamiento en residencia, cuenta bancaria, vivienda y adaptación al nuevo entorno.</p>
+        <span class="badge-tiempo">Continuo</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 7 — PRUEBA SOCIAL
+══════════════════════════════════════════ -->
+<div class="slide centered" id="s7">
+  <div class="logo-mark">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" stroke="#F5EDD8" stroke-width="2.5"/>
+      <path d="M18 66 L34 44 L46 56 L58 34 L72 52 L82 42" stroke="#F5EDD8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="label anim" style="justify-content:center;">Resultados reales</div>
+  <h1 class="anim">Ya funciona</h1>
+  <div class="divider anim"></div>
+  <div class="grid-3 anim" style="max-width:920px;">
+    <div class="card oro-border" style="text-align:center;">
+      <div class="numero-hero" style="font-size:clamp(52px,7vw,80px); color:var(--oro);">35+</div>
+      <p style="color:var(--crema-suave); margin-top:8px; font-size:15px; font-weight:500;">fisioterapeutas<br>trabajando en Suiza</p>
+    </div>
+    <div class="card oro-border" style="text-align:center;">
+      <div class="numero-hero" style="font-size:clamp(52px,7vw,80px);">25–30</div>
+      <p style="color:var(--crema-suave); margin-top:8px; font-size:15px; font-weight:500;">buscando trabajo<br>este verano</p>
+    </div>
+    <div class="card oro-border" style="text-align:center;">
+      <div class="numero-hero" style="font-size:clamp(52px,7vw,80px);">40–50</div>
+      <p style="color:var(--crema-suave); margin-top:8px; font-size:15px; font-weight:500;">en proceso activo<br>próximos meses</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 8 — CTA FINAL
+══════════════════════════════════════════ -->
+<div class="slide dark-deep" id="s8">
+  <div class="logo-mark">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" stroke="#F5EDD8" stroke-width="2.5"/>
+      <path d="M18 66 L34 44 L46 56 L58 34 L72 52 L82 42" stroke="#F5EDD8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="label anim">Plazas limitadas</div>
+  <h1 class="anim">¿Listo para<br>dar el <span class="oro">paso</span>?</h1>
+  <div class="divider anim"></div>
+  <ul class="checklist anim">
+    <li><span class="check">✓</span> Gestión completa de la homologación del título</li>
+    <li><span class="check">✓</span> 6 meses de clases de idioma incluidas</li>
+    <li><span class="check">✓</span> Búsqueda activa de empleo y negociación</li>
+    <li><span class="check">✓</span> Acompañamiento total en la llegada a Suiza</li>
+    <li><span class="check">✓</span> Comunidad de fisios españoles ya instalados</li>
+  </ul>
+  <a href="#" class="cta-btn anim">Reserva tu plaza <span class="arrow">→</span></a>
+  <span class="cta-secondary anim">Solo 40 plazas disponibles · Más de 35 fisios ya trabajando en Suiza</span>
+</div>
+
+
+<!-- NAV DOTS -->
+<div class="nav-dots" id="navDots"></div>
+<div class="nav-hint">← → · espacio</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const progress = document.getElementById('progress');
+  const dotsContainer = document.getElementById('navDots');
+  let current = 0;
+  const total = slides.length;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(d);
+  });
+
+  function triggerAnims(slide) {
+    slide.querySelectorAll('.anim').forEach(el => el.classList.remove('visible'));
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      slide.querySelectorAll('.anim').forEach(el => el.classList.add('visible'));
+    }));
+  }
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dotsContainer.children[current].classList.remove('active');
+    current = (n + total) % total;
+    slides[current].classList.add('active');
+    dotsContainer.children[current].classList.add('active');
+    progress.style.width = ((current + 1) / total * 100) + '%';
+    triggerAnims(slides[current]);
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goTo(current + 1); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(current - 1); }
+  });
+
+  progress.style.width = (1 / total * 100) + '%';
+  triggerAnims(slides[0]);
+</script>
+</body>
+</html>
