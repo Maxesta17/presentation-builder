@@ -40,7 +40,8 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 68px 96px 88px;
+  padding: 40px 60px 60px 60px;
+  box-sizing: border-box;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.45s ease;
@@ -72,22 +73,24 @@ body {
 .slide.light-accent .card p  { color: rgba(107,18,18,0.6); }
 .slide.light-accent .divider { background: var(--granate-deep); opacity: 0.3; }
 
-/* ─── LOGO MARK (top right) ───────────────────────── */
+/* ─── LOGO MARK ──────────────────────────────────── */
 .logo-mark {
   position: absolute;
-  top: 28px;
-  right: 40px;
-  width: 60px;
-  height: auto;
+  bottom: 40px;
+  right: 50px;
+  height: 60px;
+  width: auto;
   z-index: 10;
-  opacity: 0.4;
+  opacity: 0.85;
   object-fit: contain;
-  display: none;
-}
-#s1 > .logo-mark,
-#s20 > .logo-mark,
-.slide.breathing > .logo-mark {
   display: block;
+}
+#s1 > .logo-mark {
+  top: 20px;
+  bottom: auto;
+  right: 30px;
+  height: 70px;
+  opacity: 0.9;
 }
 
 /* ─── TYPOGRAPHY ──────────────────────────────────── */
@@ -563,14 +566,7 @@ h2 {
   display: block;
 }
 
-/* ─── SCROLLABLE SLIDE ────────────────────────────── */
-.slide.scrollable {
-  overflow-y: auto;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 50px;
-  padding-bottom: 60px;
-}
+/* ─── (scrollable removed — all slides fit in one viewport) ─── */
 
 /* ─── ANIMATIONS ──────────────────────────────────── */
 .anim {
@@ -589,7 +585,7 @@ h2 {
 .slide.breathing {
   background-size: cover;
   background-position: center;
-  padding: 60px;
+  padding: 40px 60px 60px 60px;
 }
 .slide.breathing::after {
   content: '';
@@ -775,24 +771,20 @@ h2 {
      SLIDE 1 — PORTADA
 ══════════════════════════════════════════ -->
 <div class="slide dark-deep active" id="s1">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">Webinar · Fisio en Suiza</div>
-  <h1 class="anim">Fisioterapia<br>en <span class="oro">Suiza</span></h1>
-  <div class="divider anim"></div>
-  <h2 class="anim" style="font-family:'Fraunces',serif; font-style:italic; font-size:clamp(18px,2.2vw,26px); color:var(--crema-suave); font-weight:300;">Da el gran salto profesional y económico</h2>
-  <div class="stat-row anim">
-    <div class="stat-pill">
-      <span class="val">35+</span>
-      <span class="desc">fisios ya en Suiza</span>
-    </div>
-    <div class="stat-pill">
-      <span class="val" style="color:var(--oro);">×4</span>
-      <span class="desc">salario vs España</span>
-    </div>
-    <div class="stat-pill">
-      <span class="val">Rafa &amp; Paula</span>
-      <span class="desc">fisioterapeutas en activo</span>
-    </div>
+  <div class="anim" style="width:min(320px,60%); height:1px; background:rgba(255,255,255,0.18); margin:28px auto 0;"></div>
+  <h1 class="anim" style="margin:28px 0;">Fisioterapia<br>en <span class="oro">Suiza</span></h1>
+  <div class="anim" style="width:min(320px,60%); height:1px; background:rgba(255,255,255,0.18); margin:0 auto 28px;"></div>
+  <h2 class="anim" style="font-family:'Fraunces',serif; font-style:italic; font-size:clamp(18px,2.2vw,26px); color:var(--oro); font-weight:300;">Da el gran salto profesional y económico</h2>
+  <!-- Decorative mountain silhouette -->
+  <div class="anim" style="width:70%; max-width:900px; margin:40px auto 0;">
+    <svg viewBox="0 0 900 140" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+      <!-- Back layer — distant peaks -->
+      <polyline points="0,140 80,95 140,110 220,60 300,100 370,75 440,90 520,45 600,85 670,70 740,55 800,80 860,65 900,90 900,140" stroke="rgba(255,255,255,0.04)" stroke-width="1" fill="none"/>
+      <!-- Main layer — foreground peaks -->
+      <polyline points="0,140 60,110 120,120 180,80 250,105 310,65 380,95 430,50 490,85 540,35 600,75 650,90 710,55 770,70 820,40 870,75 900,95 900,140" stroke="rgba(255,255,255,0.12)" stroke-width="1" fill="none"/>
+    </svg>
   </div>
 </div>
 
@@ -801,31 +793,50 @@ h2 {
      SLIDE 2 — QUIÉNES SOMOS
 ══════════════════════════════════════════ -->
 <div class="slide" id="s2">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">Quiénes somos</div>
-  <h1 class="anim">Rafa <em>&amp;</em> Paula</h1>
+  <h1 class="anim">El <span class="oro" style="font-style:italic;">Equipo</span></h1>
   <div class="divider anim"></div>
-  <div class="grid-2 anim" style="margin-top:22px;">
-    <div class="card crema-border" style="text-align:center; padding:32px 24px 28px;">
-      <!-- Replace with real photo: <img src="../assets/foto-rafa.jpg"> -->
-      <svg width="140" height="140" viewBox="0 0 140 140" style="display:block; margin:0 auto 18px auto;">
-        <circle cx="70" cy="70" r="68" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="2"/>
-        <text x="70" y="70" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="56" font-weight="600">R</text>
-      </svg>
-      <h3>Rafa</h3>
-      <p>Fisioterapeuta. De Cádiz. Vive en Francia desde 2019. Fundó Fisio en Francia en 2021. Amplió el proyecto a Suiza junto a Paula y Adrián.</p>
+
+  <!-- Row 1: 3 badges -->
+  <div class="anim" style="display:flex; justify-content:center; gap:16px; margin-top:18px; flex-wrap:wrap;">
+    <div style="display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:12px 24px;">
+      <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;"><circle cx="20" cy="20" r="19" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="1.5"/><text x="20" y="20" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="17" font-weight="600">R</text></svg>
+      <div><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Rafa</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.3;">Creador de Fisio en Suiza</div></div>
     </div>
-    <div class="card crema-border" style="text-align:center; padding:32px 24px 28px;">
-      <!-- Replace with real photo: <img src="../assets/foto-paula.jpg"> -->
-      <svg width="140" height="140" viewBox="0 0 140 140" style="display:block; margin:0 auto 18px auto;">
-        <circle cx="70" cy="70" r="68" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="2"/>
-        <text x="70" y="70" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="56" font-weight="600">P</text>
-      </svg>
-      <h3>Paula</h3>
-      <p>Fisioterapeuta. De Canarias. Vive y trabaja en Zúrich desde hace 2,5 años. Llegó directamente tras terminar la carrera. Experta en condiciones laborales y vida cotidiana en Suiza.</p>
+    <div style="display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:12px 24px;">
+      <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;"><circle cx="20" cy="20" r="19" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="1.5"/><text x="20" y="20" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="17" font-weight="600">P</text></svg>
+      <div><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Paula</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.3;">Fisioterapeuta en Suiza</div></div>
+    </div>
+    <div style="display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:12px 24px;">
+      <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;"><circle cx="20" cy="20" r="19" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="1.5"/><text x="20" y="20" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="17" font-weight="600">S</text></svg>
+      <div><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Sarah</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.3;">Asesora de homologación</div></div>
     </div>
   </div>
-  <h2 class="anim" style="margin-top:22px; color:var(--crema-dimmed);">Dos fisioterapeutas que ya lo han vivido.</h2>
+
+  <!-- Row 2: 2 badges centered -->
+  <div class="anim" style="display:flex; justify-content:center; gap:16px; margin-top:12px; flex-wrap:wrap;">
+    <div style="display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:12px 24px;">
+      <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;"><circle cx="20" cy="20" r="19" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="1.5"/><text x="20" y="20" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="17" font-weight="600">M</text></svg>
+      <div><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Manuel</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.3;">Asesor de homologación</div></div>
+    </div>
+    <div style="display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:12px 24px;">
+      <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;"><circle cx="20" cy="20" r="19" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="1.5"/><text x="20" y="20" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="17" font-weight="600">A</text></svg>
+      <div><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Ainhoa</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.3;">Equipo</div></div>
+    </div>
+  </div>
+
+  <!-- Row 3: 2 badges centered -->
+  <div class="anim" style="display:flex; justify-content:center; gap:16px; margin-top:12px; flex-wrap:wrap;">
+    <div style="display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:12px 24px;">
+      <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;"><circle cx="20" cy="20" r="19" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="1.5"/><text x="20" y="20" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="17" font-weight="600">A</text></svg>
+      <div><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Adrián</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.3;">Equipo</div></div>
+    </div>
+    <div style="display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:12px 24px;">
+      <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;"><circle cx="20" cy="20" r="19" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="1.5"/><text x="20" y="20" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="17" font-weight="600">A</text></svg>
+      <div><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Alejandro</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.3;">Equipo</div></div>
+    </div>
+  </div>
 </div>
 
 
@@ -833,7 +844,7 @@ h2 {
      BREATHING 1 — NUEVA VIDA
 ══════════════════════════════════════════ -->
 <div class="slide breathing" style="background-color:#0A1628; background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1920&q=80');">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <p class="breathing-text">No es solo un trabajo. Es una nueva vida.</p>
 </div>
 
@@ -842,22 +853,22 @@ h2 {
      SLIDE 3 — RESULTADOS DEL PROGRAMA
 ══════════════════════════════════════════ -->
 <div class="slide" id="s3">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">Resultados reales</div>
   <h1 class="anim">Ya <em>funciona</em></h1>
   <div class="divider anim"></div>
   <div class="grid-3 anim">
     <div class="card oro-border" style="text-align:center;">
-      <div class="numero-hero small" style="color:var(--oro);">35+</div>
+      <div class="numero-hero small" style="color:var(--oro);">50+</div>
       <p style="color:var(--crema-suave); margin-top:8px; font-size:15px; font-weight:500;">fisioterapeutas<br>ya trabajando en Suiza</p>
     </div>
     <div class="card oro-border" style="text-align:center;">
-      <div class="numero-hero small">25–30</div>
-      <p style="color:var(--crema-suave); margin-top:8px; font-size:15px; font-weight:500;">buscando trabajo<br>actualmente</p>
+      <div class="numero-hero small">+20</div>
+      <p style="color:var(--crema-suave); margin-top:8px; font-size:15px; font-weight:500;">puestos libres<br>actualmente</p>
     </div>
     <div class="card oro-border" style="text-align:center;">
-      <div class="numero-hero small">40–50</div>
-      <p style="color:var(--crema-suave); margin-top:8px; font-size:15px; font-weight:500;">en proceso activo<br>próximos meses</p>
+      <div class="numero-hero small">+50</div>
+      <p style="color:var(--crema-suave); margin-top:8px; font-size:15px; font-weight:500;">clínicas<br>colaboradoras</p>
     </div>
   </div>
   <h2 class="anim" style="margin-top:24px; font-family:'Fraunces',serif; font-style:italic; color:var(--crema-suave); font-weight:300; font-size:clamp(16px,1.8vw,22px);">"Hay una gran demanda de profesionales en Suiza"</h2>
@@ -868,7 +879,7 @@ h2 {
      SLIDE 4 — CASOS ESPECIALES
 ══════════════════════════════════════════ -->
 <div class="slide" id="s4">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">Antes de empezar</div>
   <h1 class="anim">Casos<br><em>especiales</em></h1>
   <div class="divider anim"></div>
@@ -893,7 +904,7 @@ h2 {
      SLIDE 5 — POR QUÉ NOS VAMOS A SUIZA
 ══════════════════════════════════════════ -->
 <div class="slide" id="s5">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">La motivación</div>
   <h1 class="anim">¿Por qué <em>Suiza</em>?</h1>
   <div class="divider anim"></div>
@@ -918,7 +929,7 @@ h2 {
      SLIDE 6 — COMPARATIVA ESPAÑA VS SUIZA
 ══════════════════════════════════════════ -->
 <div class="slide" id="s6">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">La diferencia clave</div>
   <h1 class="anim">España vs <span class="oro">Suiza</span></h1>
   <div class="bar-chart anim" style="max-width:800px; margin:30px auto 0; width:100%;">
@@ -946,7 +957,7 @@ h2 {
      BREATHING 2 — LO QUE VALES
 ══════════════════════════════════════════ -->
 <div class="slide breathing" style="background-color:#0A1628; background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <p class="breathing-text">Llevas años formándote. Es hora de que te paguen lo que vales.</p>
 </div>
 
@@ -955,7 +966,7 @@ h2 {
      SLIDE 7 — REQUISITO CLAVE: EL B2
 ══════════════════════════════════════════ -->
 <div class="slide" id="s7">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">Requisito imprescindible</div>
   <h1 class="anim">Necesitas el <span class="oro">B2</span> certificado</h1>
   <h2 class="anim">En uno de los tres idiomas oficiales de trabajo</h2>
@@ -984,68 +995,117 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 8 — PROCESO DE HOMOLOGACIÓN
+     BREATHING — EL PROCESO
 ══════════════════════════════════════════ -->
-<div class="slide" id="s8">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
-  <div class="label anim">Cruz Roja Suiza (SRK)</div>
-  <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Homologación <em>paso a paso</em></h1>
-  <div class="timeline anim">
-    <div class="timeline-line"></div>
-    <div class="timeline-stops">
-      <div class="timeline-stop">
-        <div class="timeline-icon">
-          <svg viewBox="0 0 26 26" fill="none" stroke="var(--oro)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="5" y="3" width="16" height="20" rx="2"/>
-            <line x1="9" y1="8" x2="17" y2="8"/>
-            <line x1="9" y1="12" x2="17" y2="12"/>
-            <line x1="9" y1="16" x2="13" y2="16"/>
-          </svg>
-        </div>
-        <div class="timeline-title">Precheck</div>
-        <div class="timeline-badge">~1 mes</div>
+<div class="slide breathing" style="background-color:#0A1628; background-image:url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1920&q=80');">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
+  <p class="breathing-text">El proceso es más sencillo de lo que crees.</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 9 — PROCESO DE HOMOLOGACIÓN
+══════════════════════════════════════════ -->
+<div class="slide" id="s9">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
+  <div class="label anim">Homologación</div>
+  <h1 class="anim" style="font-size:clamp(30px,4vw,48px);">Proceso de <span class="oro" style="font-style:italic;">Homologación</span></h1>
+  <div class="divider anim"></div>
+
+  <!-- 4 Phase cards horizontal -->
+  <div class="anim" style="display:flex; align-items:flex-start; justify-content:center; gap:0; margin-top:14px; width:100%; max-width:1100px;">
+
+    <!-- FASE 1 -->
+    <div style="flex:1; max-width:23%; background:rgba(255,255,255,0.06); border-radius:12px; border-top:3px solid #4CAF50; padding:24px; text-align:center; display:flex; flex-direction:column; align-items:center;">
+      <div style="font-size:32px; margin-bottom:8px;">📋</div>
+      <span style="background:#4CAF50; color:#fff; font-size:11px; font-weight:700; padding:3px 10px; border-radius:8px; margin-bottom:6px;">Fase 1</span>
+      <div style="color:#fff; font-weight:700; font-size:18px; margin-bottom:8px;">Precheck</div>
+      <p style="color:var(--crema-suave); font-size:13px; line-height:1.3; margin-bottom:10px;">Recopilar y subir documentación digital a la Cruz Roja Suiza (SRK):</p>
+      <div style="text-align:left; width:100%; margin-bottom:10px;">
+        <div style="color:var(--crema-dimmed); font-size:12px; line-height:1.7;"><span style="color:#4CAF50; font-weight:700;">✓</span> Título de Fisioterapia</div>
+        <div style="color:var(--crema-dimmed); font-size:12px; line-height:1.7;"><span style="color:#4CAF50; font-weight:700;">✓</span> Certificado no sanciones</div>
+        <div style="color:var(--crema-dimmed); font-size:12px; line-height:1.7;"><span style="color:#4CAF50; font-weight:700;">✓</span> DNI</div>
+        <div style="color:var(--crema-dimmed); font-size:12px; line-height:1.7;"><span style="color:#4CAF50; font-weight:700;">✓</span> CV traducido por ti</div>
+        <div style="color:var(--crema-dimmed); font-size:12px; line-height:1.7;"><span style="color:#4CAF50; font-weight:700;">✓</span> Justificante de pago</div>
       </div>
-      <div class="timeline-stop">
-        <div class="timeline-icon">
-          <svg viewBox="0 0 26 26" fill="none" stroke="var(--oro)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="13" cy="13" r="10"/>
-            <polyline points="13,7 13,13 17,15"/>
-          </svg>
-        </div>
-        <div class="timeline-title">Solicitud</div>
-        <div class="timeline-badge">~2 meses</div>
+      <div style="display:flex; flex-direction:column; gap:5px; width:100%;">
+        <span style="background:rgba(76,175,80,0.15); color:#81C784; font-size:11px; padding:5px 12px; border-radius:6px;">⚡ Idóneo: 1 semana</span>
+        <span style="background:rgba(255,152,0,0.15); color:#FFB74D; font-size:11px; padding:5px 12px; border-radius:6px;">⏳ Máx: 30 días – 1 mes</span>
       </div>
-      <div class="timeline-stop">
-        <div class="timeline-icon">
-          <svg viewBox="0 0 26 26" fill="none" stroke="var(--oro)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 9 L13 3 L21 9 L21 21 L5 21 Z"/>
-            <line x1="9" y1="12" x2="17" y2="12"/>
-            <line x1="9" y1="16" x2="17" y2="16"/>
-          </svg>
-        </div>
-        <div class="timeline-title">Decisión</div>
-        <div class="timeline-badge">Variable</div>
+    </div>
+
+    <!-- Arrow 1→2 -->
+    <div style="display:flex; align-items:center; padding:0 6px; color:var(--oro); font-size:22px; margin-top:80px;">→</div>
+
+    <!-- FASE 2 -->
+    <div style="flex:1; max-width:23%; background:rgba(255,255,255,0.06); border-radius:12px; border-top:3px solid #FBC02D; padding:24px; text-align:center; display:flex; flex-direction:column; align-items:center;">
+      <div style="font-size:32px; margin-bottom:8px;">📝</div>
+      <span style="background:#FBC02D; color:#1A1A2E; font-size:11px; font-weight:700; padding:3px 10px; border-radius:8px; margin-bottom:6px;">Fase 2</span>
+      <div style="color:#fff; font-weight:700; font-size:18px; margin-bottom:8px;">Formulario Inicial</div>
+      <p style="color:var(--crema-suave); font-size:13px; line-height:1.3; margin-bottom:10px;">Tras recibir el <strong style="color:#fff;">Precheck Positive</strong>, te llegará un formulario online. Rellenarlo con tus datos de envío para recibir la carta definitiva.</p>
+      <div style="margin-top:auto; display:flex; flex-direction:column; gap:5px; width:100%;">
+        <span style="background:rgba(76,175,80,0.15); color:#81C784; font-size:11px; padding:5px 12px; border-radius:6px;">⚡ Idóneo: 2 días</span>
+        <span style="background:rgba(255,152,0,0.15); color:#FFB74D; font-size:11px; padding:5px 12px; border-radius:6px;">⏳ Máx: 45 días</span>
       </div>
-      <div class="timeline-stop">
-        <div class="timeline-icon">
-          <svg viewBox="0 0 26 26" fill="none" stroke="var(--oro)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="13" cy="13" r="10"/>
-            <polyline points="8,13 11,17 18,9"/>
-          </svg>
-        </div>
-        <div class="timeline-title">Tasa final</div>
-        <div class="timeline-badge">~1.350€</div>
+    </div>
+
+    <!-- Arrow 2→3 -->
+    <div style="display:flex; align-items:center; padding:0 6px; color:var(--oro); font-size:22px; margin-top:80px;">→</div>
+
+    <!-- FASE 3 -->
+    <div style="flex:1; max-width:23%; background:rgba(255,255,255,0.06); border-radius:12px; border-top:3px solid #EF6C00; padding:24px; text-align:center; display:flex; flex-direction:column; align-items:center;">
+      <div style="font-size:32px; margin-bottom:8px;">📦</div>
+      <span style="background:#EF6C00; color:#fff; font-size:11px; font-weight:700; padding:3px 10px; border-radius:8px; margin-bottom:6px;">Fase 3</span>
+      <div style="color:#fff; font-weight:700; font-size:18px; margin-bottom:8px;">Recopilación y Envío</div>
+      <p style="color:var(--crema-suave); font-size:13px; line-height:1.3; margin-bottom:10px;">Mientras esperas la carta definitiva, <strong style="color:#fff;">recopilar, compulsar y traducir</strong> documentos. Envío por <strong style="color:#fff;">carta certificada</strong>:</p>
+      <div style="text-align:left; width:100%; margin-bottom:10px;">
+        <div style="color:var(--crema-dimmed); font-size:12px; line-height:1.7;"><span style="color:#EF6C00; font-weight:700;">✓</span> Docs compulsados (notario)</div>
+        <div style="color:var(--crema-dimmed); font-size:12px; line-height:1.7;"><span style="color:#EF6C00; font-weight:700;">✓</span> Docs traducidos jurados</div>
+        <div style="color:var(--crema-dimmed); font-size:12px; line-height:1.7;"><span style="color:#EF6C00; font-weight:700;">✓</span> Documentos originales</div>
+        <div style="color:var(--crema-dimmed); font-size:12px; line-height:1.7;"><span style="color:#EF6C00; font-weight:700;">✓</span> Formulario final</div>
+        <div style="color:var(--crema-dimmed); font-size:12px; line-height:1.7;"><span style="color:#EF6C00; font-weight:700;">✓</span> Justificante pago SRK</div>
       </div>
+      <div style="display:flex; flex-direction:column; gap:5px; width:100%;">
+        <span style="background:rgba(76,175,80,0.15); color:#81C784; font-size:11px; padding:5px 12px; border-radius:6px;">⚡ Idóneo: 2 meses</span>
+        <span style="background:rgba(255,152,0,0.15); color:#FFB74D; font-size:11px; padding:5px 12px; border-radius:6px;">⏳ Máx: 90 días</span>
+      </div>
+    </div>
+
+    <!-- Arrow 3→4 -->
+    <div style="display:flex; align-items:center; padding:0 6px; color:var(--oro); font-size:22px; margin-top:80px;">→</div>
+
+    <!-- FASE 4 -->
+    <div style="flex:1; max-width:23%; background:rgba(255,255,255,0.06); border-radius:12px; border-top:3px solid #E53935; padding:24px; text-align:center; display:flex; flex-direction:column; align-items:center;">
+      <div style="font-size:32px; margin-bottom:8px;">🏛️</div>
+      <span style="background:#E53935; color:#fff; font-size:11px; font-weight:700; padding:3px 10px; border-radius:8px; margin-bottom:6px;">Fase 4</span>
+      <div style="color:#fff; font-weight:700; font-size:18px; margin-bottom:8px;">Respuesta de Suiza</div>
+      <p style="color:var(--crema-suave); font-size:13px; line-height:1.3; margin-bottom:10px;">Esperar la resolución oficial de la SRK: <strong style="color:#fff;">homologación parcial</strong>, <strong style="color:#fff;">directa o medidas compensatorias</strong>.</p>
+      <div style="margin-top:auto; display:flex; flex-direction:column; gap:5px; width:100%;">
+        <span style="background:rgba(229,57,53,0.15); color:#EF9A9A; font-size:11px; padding:5px 12px; border-radius:6px;">🕐 Espera: 3 a 5 meses</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Summary row -->
+  <div class="anim" style="display:flex; justify-content:center; gap:16px; margin-top:16px;">
+    <div style="background:rgba(76,175,80,0.12); border:1px solid rgba(76,175,80,0.3); border-radius:10px; padding:8px 20px; display:flex; align-items:center; gap:8px;">
+      <span style="font-size:14px;">🚀</span>
+      <span style="color:#81C784; font-size:13px; font-weight:600;">Ruta Rápida: 4–6 meses</span>
+    </div>
+    <div style="background:rgba(255,152,0,0.12); border:1px solid rgba(255,152,0,0.3); border-radius:10px; padding:8px 20px; display:flex; align-items:center; gap:8px;">
+      <span style="font-size:14px;">🐢</span>
+      <span style="color:#FFB74D; font-size:13px; font-weight:600;">Ruta Lenta: 6–8 meses</span>
     </div>
   </div>
 </div>
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 9 — DECISIÓN PARCIAL VS TOTAL
+     SLIDE 10 — DECISIÓN PARCIAL VS TOTAL
 ══════════════════════════════════════════ -->
-<div class="slide" id="s9">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+<div class="slide" id="s10">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">Homologación</div>
   <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Parcial vs <span class="oro">Total</span></h1>
   <div class="comparativa anim">
@@ -1054,7 +1114,7 @@ h2 {
       <div class="comp-row">Documentación completa ✓</div>
       <div class="comp-row">Falta el B2</div>
       <div class="comp-row">No puedes trabajar oficialmente</div>
-      <div class="comp-row" style="font-size:13px;">Excepción: 2–4 de cada 100 clínicas alemanas te aceptan bajo tutela</div>
+      <div class="comp-row" style="font-size:13px;">2–4 de cada 100 clínicas alemanas te aceptan bajo tutela</div>
       <div class="comp-row" style="font-size:13px;">En cantones franceses: prácticamente imposible sin B2</div>
     </div>
     <div class="comp-col right">
@@ -1069,42 +1129,10 @@ h2 {
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 10 — CANTONES Y ZONAS
-══════════════════════════════════════════ -->
-<div class="slide" id="s10">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
-  <div class="label anim">Geografía</div>
-  <h1 class="anim">Cantones y <em>zonas</em></h1>
-  <h2 class="anim">Suiza se divide en cantones (como comunidades autónomas, pero más independientes)</h2>
-  <div class="grid-3 anim">
-    <div class="card oro-border" style="text-align:center;">
-      <h3 style="font-size:36px; margin-bottom:12px;">🇩🇪</h3>
-      <h3>21 cantones alemanes</h3>
-      <p>Zona más grande. Más trabajo. Más salario. Lo que gestionamos principalmente.</p>
-    </div>
-    <div class="card oro-border" style="text-align:center;">
-      <h3 style="font-size:36px; margin-bottom:12px;">🇫🇷</h3>
-      <h3>4 cantones franceses</h3>
-      <p>Zona romanda. Buena oferta hospitalaria. Más competencia (franceses del este).</p>
-    </div>
-    <div class="card oro-border" style="text-align:center; opacity:0.6;">
-      <h3 style="font-size:36px; margin-bottom:12px;">🇮🇹</h3>
-      <h3>1 cantón italiano</h3>
-      <p>Ticino. Muy saturado. No gestionamos plazas.</p>
-    </div>
-  </div>
-  <div class="alerta anim">
-    <span class="alerta-icon">✅</span>
-    <div class="alerta-text">Nosotros ayudamos con: <strong>zona alemana ✓</strong> y <strong>zona francesa ✓</strong></div>
-  </div>
-</div>
-
-
-<!-- ══════════════════════════════════════════
      SLIDE 11 — TIPOS DE TRABAJO
 ══════════════════════════════════════════ -->
 <div class="slide" id="s11">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">Opciones laborales</div>
   <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Tipos de <em>trabajo</em></h1>
   <div class="grid-3 anim">
@@ -1144,7 +1172,7 @@ h2 {
      SLIDE 12 — SALARIOS DATOS REALES
 ══════════════════════════════════════════ -->
 <div class="slide dark-deep" id="s12">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">Datos reales · Salarios netos</div>
   <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Lo que <em>realmente</em> se <span class="oro">gana</span></h1>
   <div class="divider anim"></div>
@@ -1176,7 +1204,7 @@ h2 {
      BREATHING 3 — TECHO DE CRISTAL
 ══════════════════════════════════════════ -->
 <div class="slide breathing" style="background-color:#0A1628; background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1920&q=80');">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <p class="breathing-text">El techo de cristal en España no existe en Suiza.</p>
 </div>
 
@@ -1185,13 +1213,13 @@ h2 {
      SLIDE 13 — GASTOS DE VIDA
 ══════════════════════════════════════════ -->
 <div class="slide" id="s13">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">Coste de vida</div>
-  <h1 class="anim" style="font-size:clamp(32px,4.5vw,56px); max-width:800px;">~1.000–1.500 <span class="oro">CHF</span> de ahorro<br>desde el <em>primer mes</em></h1>
+  <h1 class="anim" style="font-size:clamp(32px,4.5vw,56px); max-width:800px;">~1.500–2.000 <span class="oro">CHF</span> de ahorro<br>desde el <em>primer mes</em></h1>
   <div class="divider anim"></div>
   <!-- Donut chart -->
   <div class="anim" style="position:relative; width:220px; height:220px; margin:28px auto 0;">
-    <div style="width:220px; height:220px; border-radius:50%; background:conic-gradient(#C9A84C 0% 50%, #E8D5A3 50% 63%, #7A9E7E 63% 75%, #6B8CAE 75% 100%);"></div>
+    <div style="width:220px; height:220px; border-radius:50%; background:conic-gradient(#C9A84C 0% 45%, #E8D5A3 45% 56%, #7A9E7E 56% 66%, #6B8CAE 66% 100%);"></div>
     <div style="position:absolute; inset:0; margin:auto; width:120px; height:120px; border-radius:50%; background:var(--granate);"></div>
   </div>
   <!-- Legend -->
@@ -1213,7 +1241,7 @@ h2 {
       <span style="font-size:14px; color:var(--crema-suave);">Resto</span>
     </div>
   </div>
-  <h2 class="anim" style="margin-top:20px; font-family:'Fraunces',serif; font-style:italic; font-weight:300; font-size:clamp(16px,1.8vw,22px); color:var(--oro);">Con salario medio: hasta 2.500 CHF/mes de ahorro</h2>
+  <h2 class="anim" style="margin-top:20px; font-family:'Fraunces',serif; font-style:italic; font-weight:300; font-size:clamp(16px,1.8vw,22px); color:var(--oro);">Con salario medio: hasta 3.000 CHF/mes de ahorro</h2>
 </div>
 
 
@@ -1221,46 +1249,42 @@ h2 {
      SLIDE 14 — CONDICIONES LABORALES
 ══════════════════════════════════════════ -->
 <div class="slide" id="s14">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">Tu día a día</div>
   <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Condiciones <em>laborales</em></h1>
   <div class="divider anim"></div>
-  <div class="icon-row anim">
-    <div class="icon-item-compact">
-      <svg viewBox="0 0 48 48" fill="none" stroke="var(--oro)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- Row 1: 3 cards -->
+  <div class="anim" style="display:flex; justify-content:center; gap:18px; margin-top:22px; flex-wrap:wrap;">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:10px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.13); border-radius:14px; padding:22px 28px 18px; min-width:160px;">
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="var(--oro)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="24" cy="24" r="18"/>
         <polyline points="24,12 24,24 32,28"/>
       </svg>
-      <div class="icon-label"><strong>Jornada</strong><br>42h/semana · Opción 80%</div>
+      <div style="text-align:center;"><strong style="color:#fff; font-size:15px;">Jornada</strong><br><span style="color:var(--crema-dimmed); font-size:13px;">42h/semana · Opción 80%</span></div>
     </div>
-    <div class="icon-item-compact">
-      <svg viewBox="0 0 48 48" fill="none" stroke="var(--oro)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:10px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.13); border-radius:14px; padding:22px 28px 18px; min-width:160px;">
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="var(--oro)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <rect x="6" y="10" width="36" height="30" rx="3"/>
         <line x1="6" y1="18" x2="42" y2="18"/>
         <line x1="16" y1="10" x2="16" y2="6"/>
         <line x1="32" y1="10" x2="32" y2="6"/>
       </svg>
-      <div class="icon-label"><strong>Vacaciones</strong><br>5–6 semanas/año</div>
+      <div style="text-align:center;"><strong style="color:#fff; font-size:15px;">Vacaciones</strong><br><span style="color:var(--crema-dimmed); font-size:13px;">5–6 semanas/año</span></div>
     </div>
-    <div class="icon-item-compact">
-      <svg viewBox="0 0 48 48" fill="none" stroke="var(--oro)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="8" y="18" width="32" height="22" rx="3"/>
-        <path d="M16,18 L16,14 C16,10 20,7 24,7 C28,7 32,10 32,14 L32,18"/>
-        <line x1="20" y1="28" x2="28" y2="28"/>
-      </svg>
-      <div class="icon-label"><strong>Sabático</strong><br>Hasta 3 meses con puesto</div>
-    </div>
-  </div>
-  <div class="icon-row anim">
-    <div class="icon-item-compact">
-      <svg viewBox="0 0 48 48" fill="none" stroke="var(--oro)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:10px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.13); border-radius:14px; padding:22px 28px 18px; min-width:160px;">
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="var(--oro)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M24,4 L6,16 L6,30 C6,38 14,44 24,46 C34,44 42,38 42,30 L42,16 Z"/>
         <polyline points="16,24 22,30 32,20"/>
       </svg>
-      <div class="icon-label"><strong>Seguro</strong><br>Lo paga la empresa</div>
+      <div style="text-align:center;"><strong style="color:#fff; font-size:15px;">Seguro</strong><br><span style="color:var(--crema-dimmed); font-size:13px;">Lo paga la empresa</span></div>
     </div>
-    <div class="icon-item-compact">
-      <svg viewBox="0 0 48 48" fill="none" stroke="var(--oro)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  </div>
+
+  <!-- Row 2: 2 cards centered -->
+  <div class="anim" style="display:flex; justify-content:center; gap:18px; margin-top:14px; flex-wrap:wrap;">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:10px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.13); border-radius:14px; padding:22px 28px 18px; min-width:160px;">
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="var(--oro)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <rect x="8" y="16" width="32" height="26" rx="2"/>
         <line x1="8" y1="22" x2="40" y2="22"/>
         <path d="M14,16 L14,10 L24,6 L34,10 L34,16"/>
@@ -1268,13 +1292,13 @@ h2 {
         <line x1="24" y1="28" x2="24" y2="38"/>
         <line x1="30" y1="28" x2="30" y2="38"/>
       </svg>
-      <div class="icon-label"><strong>Pilar 1</strong><br>Pensión pública suiza</div>
+      <div style="text-align:center;"><strong style="color:#fff; font-size:15px;">Pilar 1</strong><br><span style="color:var(--crema-dimmed); font-size:13px;">Pensión pública suiza</span></div>
     </div>
-    <div class="icon-item-compact">
-      <svg viewBox="0 0 48 48" fill="none" stroke="var(--oro)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:10px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.13); border-radius:14px; padding:22px 28px 18px; min-width:160px;">
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="var(--oro)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <polygon points="24,4 30,18 44,18 32,28 36,42 24,34 12,42 16,28 4,18 18,18"/>
       </svg>
-      <div class="icon-label"><strong>Pilar 2</strong><br>Fondo privado · Devolvible</div>
+      <div style="text-align:center;"><strong style="color:#fff; font-size:15px;">Pilar 2</strong><br><span style="color:var(--crema-dimmed); font-size:13px;">Fondo privado · Devolvible</span></div>
     </div>
   </div>
 </div>
@@ -1284,7 +1308,7 @@ h2 {
      SLIDE 15 — TIPO DE FISIOTERAPIA
 ══════════════════════════════════════════ -->
 <div class="slide" id="s15">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">Práctica clínica</div>
   <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Cómo se <em>trabaja</em></h1>
   <div class="divider anim"></div>
@@ -1321,7 +1345,7 @@ h2 {
      SLIDE 16 — EL IDIOMA
 ══════════════════════════════════════════ -->
 <div class="slide" id="s16">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">El idioma · proceso y mentalidad</div>
   <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">El <em>idioma</em> no es barrera</h1>
   <div class="divider anim"></div>
@@ -1346,7 +1370,7 @@ h2 {
      SLIDE 17 — VIDA EN SUIZA
 ══════════════════════════════════════════ -->
 <div class="slide" id="s17">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">Vida en Suiza</div>
   <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Lo bueno y lo <em>real</em></h1>
   <div class="comparativa anim">
@@ -1377,7 +1401,7 @@ h2 {
      SLIDE 18 — LO QUE HACE FISIO EN SUIZA
 ══════════════════════════════════════════ -->
 <div class="slide" id="s18">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">Nuestro servicio</div>
   <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Qué hacemos <em>por ti</em></h1>
   <div class="divider anim"></div>
@@ -1398,13 +1422,15 @@ h2 {
       <div style="margin-top:16px;">
         <div style="padding:16px; background:rgba(201,168,76,0.1); border-radius:10px; margin-bottom:12px;">
           <div style="font-size:12px; color:var(--crema-dimmed); text-transform:uppercase; letter-spacing:1.5px;">Zona alemana</div>
-          <div style="font-size:clamp(28px,3vw,36px); font-weight:900; color:var(--oro); margin-top:4px;">302,50€</div>
-          <div style="font-size:12px; color:var(--crema-dimmed); margin-top:2px;">250€ + IVA · Precio bajo porque la clínica nos financia</div>
+          <div style="font-size:clamp(28px,3vw,36px); font-weight:900; color:var(--oro); margin-top:4px;">250€ + IVA</div>
+          <div style="font-size:13px; color:var(--crema-suave); margin-top:2px;">Total: 302,50€</div>
+          <div style="font-size:12px; color:var(--crema-dimmed); margin-top:4px;">Precio bajo porque la clínica nos financia</div>
         </div>
         <div style="padding:16px; background:rgba(255,255,255,0.05); border-radius:10px;">
           <div style="font-size:12px; color:var(--crema-dimmed); text-transform:uppercase; letter-spacing:1.5px;">Zona francesa</div>
-          <div style="font-size:clamp(22px,2.5vw,28px); font-weight:800; color:var(--crema); margin-top:4px;">302,50€ – 605€</div>
-          <div style="font-size:12px; color:var(--crema-dimmed); margin-top:2px;">Depende de si encontramos clínica financiadora</div>
+          <div style="font-size:clamp(28px,3vw,36px); font-weight:900; color:var(--crema); margin-top:4px;">500€ + IVA</div>
+          <div style="font-size:13px; color:var(--crema-suave); margin-top:2px;">Total: 605€</div>
+          <div style="font-size:12px; color:var(--crema-dimmed); margin-top:4px;">Depende de si encontramos clínica financiadora</div>
         </div>
       </div>
       <p style="font-size:12px; color:var(--crema-dimmed); margin-top:12px;">Aparte: traducciones + 1.000 CHF (tasas SRK)</p>
@@ -1416,44 +1442,45 @@ h2 {
 <!-- ══════════════════════════════════════════
      SLIDE 19 — CURSO DE ALEMÁN GRATUITO
 ══════════════════════════════════════════ -->
-<div class="slide scrollable dark-deep" id="s19">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+<div class="slide dark-deep" id="s19">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">Oferta exclusiva · Plazas limitadas</div>
-  <h1 class="anim" style="font-size:clamp(40px,5vw,68px);">Curso de alemán <span class="oro">gratuito</span></h1>
-  <h2 class="anim">Solo para la zona alemana · 40 plazas disponibles</h2>
-  <div class="divider anim"></div>
-  <div class="grid-2 anim">
-    <div class="card oro-border">
+  <h1 class="anim" style="font-size:clamp(36px,4.5vw,58px);">Curso de alemán <span class="oro">gratuito</span></h1>
+  <h2 class="anim" style="margin-bottom:4px;">Solo para la zona alemana · 40 plazas disponibles</h2>
+  <div class="divider anim" style="margin:10px auto;"></div>
+  <div class="grid-2 anim" style="gap:12px; margin-top:8px;">
+    <div class="card oro-border" style="padding:14px;">
       <h3>Fase 1 — De 0 a B1</h3>
-      <ul class="data-list" style="margin-top:10px;">
-        <li><span class="data-label">Duración</span><span class="data-value">6 meses</span></li>
-        <li><span class="data-label">Ritmo</span><span class="data-value">1h/día, lun–jue</span></li>
+      <ul class="data-list" style="margin-top:6px;">
+        <li><span class="data-label">Duración</span><span class="data-value">4 meses</span></li>
+        <li><span class="data-label">Ritmo</span><span class="data-value">1h30/día</span></li>
         <li><span class="data-label">Grupos</span><span class="data-value">6–10 personas</span></li>
-        <li><span class="data-label">Coste</span><span class="data-value oro">GRATIS</span></li>
+        <li><span class="data-label">Coste</span><span class="data-value oro">100–150€/mes</span></li>
       </ul>
-      <p style="font-size:12px; color:var(--crema-dimmed); margin-top:10px;">Horarios: 8–9h, 11–12h, 19:30–20:30h, 21:30–22:30h</p>
+      <p style="font-size:11px; color:var(--crema-dimmed); margin-top:6px;">Horarios: 8–9h, 11–12h, 19:30–20:30h, 21:30–22:30h</p>
     </div>
-    <div class="card oro-border">
+    <div class="card oro-border" style="padding:14px;">
       <h3>Fase 2 — De B1 a B2 (opcional)</h3>
-      <ul class="data-list" style="margin-top:10px;">
+      <ul class="data-list" style="margin-top:6px;">
         <li><span class="data-label">Duración</span><span class="data-value">3 meses intensivos</span></li>
         <li><span class="data-label">Ritmo</span><span class="data-value">2h/día</span></li>
         <li><span class="data-label">Coste</span><span class="data-value">~100€/mes</span></li>
         <li><span class="data-label">Examen Telk</span><span class="data-value oro">Lo pagamos nosotros</span></li>
       </ul>
-      <p style="font-size:12px; color:var(--crema-dimmed); margin-top:10px;">El examen Telk es el más fácil y oficial para homologar.</p>
+      <p style="font-size:11px; color:var(--crema-dimmed); margin-top:6px;">El examen Telk es el más fácil y oficial para homologar.</p>
     </div>
   </div>
-  <div class="alerta anim">
+  <div class="alerta anim" style="padding:12px; margin-top:12px;">
     <span class="alerta-icon">📋</span>
     <div class="alerta-text">
-      <strong>4 condiciones para que sea gratuito:</strong><br>
-      1. Asistencia mínima del 80% · 2. Compromiso de venir en 14 meses · 3. Trabajar con nuestras clínicas · 4. Avanzar con el proceso SRK
+      <strong>Varias condiciones:</strong><br>
+      1. Asistencia mínima del 80% · 2. Compromiso de venir en 14 meses · 3. Trabajar con nuestras clínicas · 4. Avanzar con el proceso SRK<br>
+      <strong style="color:var(--oro);">⚠️ Penalización: 1.000€ si no vienes a Suiza · 3.000€ si vienes pero por tu cuenta</strong>
     </div>
   </div>
-  <div class="alerta anim" style="max-width:880px; background:rgba(255,255,255,0.05); border-color:var(--crema-border);">
-    <span class="alerta-icon">⚠️</span>
-    <div class="alerta-text">
+  <div class="alerta anim" style="max-width:880px; background:rgba(255,255,255,0.05); border-color:var(--crema-border); padding:10px;">
+    <span class="alerta-icon" style="font-size:16px;">⚠️</span>
+    <div class="alerta-text" style="font-size:12px;">
       "El curso es una guía con profesor. Aparte, hay que estudiar por cuenta propia: podcasts, series, apps. <strong>El que no estudia fuera del curso siempre acaba con el agua al cuello.</strong>"
     </div>
   </div>
@@ -1464,16 +1491,68 @@ h2 {
      BREATHING 4 — B2 Y SRK
 ══════════════════════════════════════════ -->
 <div class="slide breathing" style="background-color:#0A1628; background-image:url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1920&q=80');">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <p class="breathing-text">Con el B2 y la SRK, mañana tienes trabajo.</p>
 </div>
 
 
 <!-- ══════════════════════════════════════════
-     SLIDE 20 — CTA FINAL
+     SLIDE 20 — LINGNOVA ACADEMY 1
 ══════════════════════════════════════════ -->
-<div class="slide dark-deep" id="s20">
-  <img class="logo-mark" src="../assets/logo.svg" alt="Fisio en Suiza">
+<div class="slide" id="s20" style="background:#680000;">
+  <div class="anim" style="margin-bottom:10px;">
+    <img src="./assets/nav_logo.png" alt="Lingnova Academy" style="width:260px; height:auto;">
+  </div>
+  <h1 class="anim" style="font-size:clamp(32px,4vw,52px); color:#fff;">Academia Propia</h1>
+  <h2 class="anim" style="color:#CCC266; font-weight:600; margin-top:6px;">Especializada en el ámbito sanitario</h2>
+  <div class="divider anim" style="background:#CCC266; margin:14px auto;"></div>
+  <div class="grid-3 anim" style="max-width:900px; margin-top:14px;">
+    <div class="card" style="background:rgba(255,255,255,0.1); border:none; border-left:3px solid #CCC266; text-align:center;">
+      <h3 style="color:#fff; font-size:17px;">Profesores nativos</h3>
+    </div>
+    <div class="card" style="background:rgba(255,255,255,0.1); border:none; border-left:3px solid #CCC266; text-align:center;">
+      <h3 style="color:#fff; font-size:17px;">90% éxito en exámenes del Ordre</h3>
+    </div>
+    <div class="card" style="background:rgba(255,255,255,0.1); border:none; border-left:3px solid #CCC266; text-align:center;">
+      <h3 style="color:#fff; font-size:17px;">5 plazas al mes</h3>
+    </div>
+  </div>
+  <div class="label anim" style="color:#CCC266; margin-top:22px; margin-bottom:10px;">Planes</div>
+  <div class="grid-3 anim" style="max-width:900px; margin-top:0;">
+    <div class="card" style="background:rgba(255,255,255,0.1); border:none; border-left:3px solid #CCC266; text-align:center;">
+      <h3 style="color:#fff; font-size:16px;">Grupos reducidos</h3>
+    </div>
+    <div class="card" style="background:rgba(255,255,255,0.1); border:none; border-left:3px solid #CCC266; text-align:center;">
+      <h3 style="color:#fff; font-size:16px;">Bonos individuales</h3>
+    </div>
+    <div class="card" style="background:rgba(255,255,255,0.1); border:none; border-left:3px solid #CCC266; text-align:center;">
+      <h3 style="color:#fff; font-size:16px;">Parejas</h3>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 21 — LINGNOVA ACADEMY 2
+══════════════════════════════════════════ -->
+<div class="slide" id="s21" style="background:#680000;">
+  <div class="anim" style="margin-bottom:10px;">
+    <img src="./assets/nav_logo.png" alt="Lingnova Academy" style="width:260px; height:auto;">
+  </div>
+  <h1 class="anim" style="font-size:clamp(28px,3.5vw,46px); color:#fff;">Tu Plataforma de Aprendizaje</h1>
+  <h2 class="anim" style="color:#CCC266; font-weight:600; margin-top:6px;">100% online · Francés y alemán sanitario</h2>
+  <div class="anim" style="width:65vw; max-width:900px; margin:20px auto 0;">
+    <img src="./assets/Lingnova.png" alt="Plataforma Lingnova" style="width:100%; height:auto; border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,0.4);">
+  </div>
+  <p class="anim" style="color:#CCC266; font-weight:600; font-size:clamp(15px,1.6vw,20px); margin-top:16px;">@lingnovacademy</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 22 — CTA FINAL
+══════════════════════════════════════════ -->
+<div class="slide dark-deep" id="s22">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <div class="label anim">Plazas limitadas</div>
   <h1 class="anim">¿Listo para<br>dar el <span class="oro">paso</span>?</h1>
   <h2 class="anim" style="font-family:'Fraunces',serif; font-style:italic; font-size:clamp(16px,1.8vw,22px); color:var(--crema-suave); font-weight:300;">Quedan plazas limitadas en el próximo curso de alemán</h2>
@@ -1506,7 +1585,8 @@ h2 {
     s5:'from-left', s6:'fade-up-slow', s7:'from-right', s8:'zoom',
     s9:'from-left', s10:'stagger', s11:'from-right', s12:'zoom',
     s13:'from-left', s14:'stagger', s15:'from-right', s16:'from-left',
-    s17:'fade-up-slow', s18:'from-right', s19:'zoom', s20:'fade-up'
+    s17:'fade-up-slow', s18:'from-right', s19:'zoom',
+    s20:'fade-up', s21:'from-left', s22:'fade-up'
   };
   Object.entries(animMap).forEach(([id, anim]) => {
     const el = document.getElementById(id);
