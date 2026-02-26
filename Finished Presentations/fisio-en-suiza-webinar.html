@@ -786,6 +786,234 @@ h2 {
   .slide { padding: 50px 80px 68px; gap: 8px; }
   h1 { font-size: clamp(32px, 4.5vw, 56px); }
 }
+
+/* ─── HOMOLOGACIÓN TIMELINE ──────────────────────── */
+.homolog-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 1140px;
+  position: relative;
+  margin-top: 16px;
+}
+.homolog-timeline::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 40px;
+  right: 40px;
+  height: 2px;
+  background: linear-gradient(to right, #4CAF50, var(--oro), #EF6C00, var(--granate-light));
+  border-radius: 2px;
+  z-index: 0;
+}
+.h-phase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.h-phase-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: white;
+  z-index: 2;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+}
+.h-phase-icon.green  { background: #4CAF50; }
+.h-phase-icon.yellow { background: var(--oro); }
+.h-phase-icon.orange { background: #EF6C00; }
+.h-phase-icon.red    { background: var(--granate-light); }
+.h-phase-card {
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--crema-border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  text-align: left;
+  backdrop-filter: blur(4px);
+  flex: 1;
+}
+.h-phase-card .h-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 6px;
+}
+.h-badge.green  { background: #4CAF50; }
+.h-badge.yellow { background: var(--oro); color: var(--granate-deep); }
+.h-badge.orange { background: #EF6C00; }
+.h-badge.red    { background: var(--granate-light); }
+.h-phase-card .h-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--crema);
+  margin-bottom: 6px;
+}
+.h-phase-card .h-desc {
+  font-size: 11px;
+  color: var(--crema-dimmed);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.h-phase-card .h-actions {
+  margin-bottom: 8px;
+}
+.h-phase-card .h-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  color: var(--crema-suave);
+  padding: 2px 0;
+}
+.h-action .h-check {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: white;
+  flex-shrink: 0;
+}
+.h-check.green  { background: #4CAF50; }
+.h-check.yellow { background: var(--oro); }
+.h-check.orange { background: #EF6C00; }
+.h-check.red    { background: var(--granate-light); }
+.h-deadline {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 9.5px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+.h-deadline.ideal {
+  background: rgba(76,175,80,0.15);
+  color: #81C784;
+  border: 1px solid rgba(76,175,80,0.25);
+}
+.h-deadline.max {
+  background: rgba(239,108,0,0.15);
+  color: #FFB74D;
+  border: 1px solid rgba(239,108,0,0.25);
+}
+.h-deadline.wait {
+  background: rgba(168,32,32,0.15);
+  color: #EF9A9A;
+  border: 1px solid rgba(168,32,32,0.25);
+}
+.homolog-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+  max-width: 1140px;
+  margin-top: 14px;
+}
+.homolog-bottom .h-panel {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--crema-border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  backdrop-filter: blur(4px);
+  text-align: center;
+}
+.h-panel h3 {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--crema);
+  margin-bottom: 12px;
+}
+.srk-flow-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.srk-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--granate-light);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 10px;
+  box-shadow: 0 2px 8px rgba(168,32,32,0.4);
+}
+.srk-flow-arrow {
+  font-size: 14px;
+  color: var(--crema-dimmed);
+}
+.srk-dot-label {
+  font-size: 9px;
+  color: var(--crema-dimmed);
+  margin-top: 3px;
+}
+.h-routes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.h-route {
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+.h-route.fast {
+  background: rgba(76,175,80,0.1);
+  border: 1px solid rgba(76,175,80,0.2);
+}
+.h-route.slow {
+  background: rgba(239,108,0,0.1);
+  border: 1px solid rgba(239,108,0,0.2);
+}
+.h-route .h-route-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.h-route.fast .h-route-label { color: #81C784; }
+.h-route.slow .h-route-label { color: #FFB74D; }
+.h-route .h-route-icon { font-size: 18px; margin-bottom: 2px; }
+.h-route .h-route-time {
+  font-weight: 900;
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+.h-route.fast .h-route-time { color: #A5D6A7; }
+.h-route.slow .h-route-time { color: #FFB74D; }
+.h-route .h-route-detail {
+  font-size: 9px;
+  color: var(--crema-dimmed);
+  line-height: 1.3;
+}
+@media (max-width: 768px) {
+  .homolog-timeline { grid-template-columns: 1fr; }
+  .homolog-timeline::before { display: none; }
+  .homolog-bottom { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -801,6 +1029,12 @@ h2 {
 ══════════════════════════════════════════ -->
 <div class="slide dark-deep active" id="s1">
   <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
+  <!-- Mountain line decoration -->
+  <svg viewBox="0 0 1440 220" preserveAspectRatio="none" style="position:absolute; bottom:0; left:0; width:100%; height:180px; z-index:0; opacity:0.12; pointer-events:none;">
+    <polyline points="0,220 80,160 160,180 260,110 340,140 420,80 500,120 560,60 640,100 720,50 800,90 860,40 940,70 1020,30 1080,65 1140,45 1200,80 1280,55 1360,90 1440,70" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linejoin="round"/>
+    <polyline points="0,220 120,170 220,190 320,140 440,160 520,110 620,145 700,90 780,130 880,75 960,110 1060,65 1140,95 1240,60 1320,100 1440,80 1440,220" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.5)" stroke-width="1" stroke-linejoin="round"/>
+    <polyline points="0,220 100,190 200,200 340,170 460,185 560,155 680,175 760,140 880,165 960,135 1080,155 1180,130 1280,150 1380,125 1440,140 1440,220" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.3)" stroke-width="0.8" stroke-linejoin="round"/>
+  </svg>
   <div class="label anim">Webinar · Fisio en Suiza</div>
   <div class="anim" style="width:min(320px,60%); height:1px; background:rgba(255,255,255,0.18); margin:28px auto 0;"></div>
   <h1 class="anim" style="margin:28px 0;">Fisioterapia<br>en <span class="oro">Suiza</span></h1>
@@ -887,43 +1121,37 @@ h2 {
   <h1 class="anim">El <span class="oro" style="font-style:italic;">Equipo</span></h1>
   <div class="divider anim"></div>
 
-  <!-- Row 1: 3 badges -->
-  <div class="anim" style="display:flex; justify-content:center; gap:16px; margin-top:18px; flex-wrap:wrap;">
-    <div style="display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:12px 24px;">
-      <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;"><circle cx="20" cy="20" r="19" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="1.5"/><text x="20" y="20" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="17" font-weight="600">R</text></svg>
-      <div><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Rafa</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.3;">Creador de Fisio en Suiza</div></div>
+  <!-- Team grid -->
+  <div class="anim" style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; margin-top:24px; max-width:960px; width:100%;">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:10px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:14px; padding:20px 12px;">
+      <img src="./assets/Rafael.jpeg" alt="Rafa" style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:2px solid var(--oro);">
+      <div style="text-align:center;"><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Rafa</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.4; margin-top:2px;">Creador de Fisio en Suiza</div></div>
     </div>
-    <div style="display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:12px 24px;">
-      <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;"><circle cx="20" cy="20" r="19" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="1.5"/><text x="20" y="20" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="17" font-weight="600">P</text></svg>
-      <div><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Paula</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.3;">Fisioterapeuta en Suiza</div></div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:10px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:14px; padding:20px 12px;">
+      <svg width="70" height="70" viewBox="0 0 70 70" style="flex-shrink:0;"><circle cx="35" cy="35" r="33" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="2"/><text x="35" y="35" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="28" font-weight="600">P</text></svg>
+      <div style="text-align:center;"><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Paula</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.4; margin-top:2px;">Fisioterapeuta en Suiza</div></div>
     </div>
-    <div style="display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:12px 24px;">
-      <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;"><circle cx="20" cy="20" r="19" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="1.5"/><text x="20" y="20" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="17" font-weight="600">S</text></svg>
-      <div><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Sarah</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.3;">Asesora de homologación</div></div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:10px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:14px; padding:20px 12px;">
+      <svg width="70" height="70" viewBox="0 0 70 70" style="flex-shrink:0;"><circle cx="35" cy="35" r="33" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="2"/><text x="35" y="35" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="28" font-weight="600">S</text></svg>
+      <div style="text-align:center;"><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Sarah</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.4; margin-top:2px;">Asesora de homologación</div></div>
     </div>
-  </div>
-
-  <!-- Row 2: 2 badges centered -->
-  <div class="anim" style="display:flex; justify-content:center; gap:16px; margin-top:12px; flex-wrap:wrap;">
-    <div style="display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:12px 24px;">
-      <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;"><circle cx="20" cy="20" r="19" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="1.5"/><text x="20" y="20" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="17" font-weight="600">M</text></svg>
-      <div><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Manuel</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.3;">Asesor de homologación</div></div>
-    </div>
-    <div style="display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:12px 24px;">
-      <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;"><circle cx="20" cy="20" r="19" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="1.5"/><text x="20" y="20" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="17" font-weight="600">A</text></svg>
-      <div><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Ainhoa</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.3;">Equipo</div></div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:10px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:14px; padding:20px 12px;">
+      <img src="./assets/Manuel.jpeg" alt="Manuel" style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:2px solid var(--oro);">
+      <div style="text-align:center;"><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Manuel</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.4; margin-top:2px;">Asesor de homologación</div></div>
     </div>
   </div>
-
-  <!-- Row 3: 2 badges centered -->
-  <div class="anim" style="display:flex; justify-content:center; gap:16px; margin-top:12px; flex-wrap:wrap;">
-    <div style="display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:12px 24px;">
-      <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;"><circle cx="20" cy="20" r="19" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="1.5"/><text x="20" y="20" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="17" font-weight="600">A</text></svg>
-      <div><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Adrián</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.3;">Equipo</div></div>
+  <div class="anim" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin-top:16px; max-width:720px; width:100%;">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:10px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:14px; padding:20px 12px;">
+      <svg width="70" height="70" viewBox="0 0 70 70" style="flex-shrink:0;"><circle cx="35" cy="35" r="33" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="2"/><text x="35" y="35" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="28" font-weight="600">A</text></svg>
+      <div style="text-align:center;"><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Ainhoa</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.4; margin-top:2px;">Equipo</div></div>
     </div>
-    <div style="display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:12px 24px;">
-      <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;"><circle cx="20" cy="20" r="19" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="1.5"/><text x="20" y="20" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="17" font-weight="600">A</text></svg>
-      <div><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Alejandro</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.3;">Equipo</div></div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:10px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:14px; padding:20px 12px;">
+      <svg width="70" height="70" viewBox="0 0 70 70" style="flex-shrink:0;"><circle cx="35" cy="35" r="33" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="2"/><text x="35" y="35" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="28" font-weight="600">A</text></svg>
+      <div style="text-align:center;"><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Adrián</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.4; margin-top:2px;">Equipo</div></div>
+    </div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:10px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:14px; padding:20px 12px;">
+      <svg width="70" height="70" viewBox="0 0 70 70" style="flex-shrink:0;"><circle cx="35" cy="35" r="33" fill="var(--granate-deep)" stroke="var(--oro)" stroke-width="2"/><text x="35" y="35" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Outfit',sans-serif" font-size="28" font-weight="600">A</text></svg>
+      <div style="text-align:center;"><div style="color:#fff; font-weight:700; font-size:15px; line-height:1.2;">Alejandro</div><div style="color:var(--crema-dimmed); font-size:12px; line-height:1.4; margin-top:2px;">Equipo</div></div>
     </div>
   </div>
 </div>
@@ -1089,6 +1317,110 @@ h2 {
 <div class="slide breathing" style="background-color:#0A1628; background-image:url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1920&q=80');">
   <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
   <p class="breathing-text">El proceso es más sencillo de lo que crees.</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SLIDE 8b — FASES DE LA HOMOLOGACIÓN
+══════════════════════════════════════════ -->
+<div class="slide" id="s8b" style="padding-top:48px; padding-bottom:48px;">
+  <img class="logo-mark" src="./assets/logosuiza.png" alt="Fisio en Suiza">
+  <div class="label anim">Homologación</div>
+  <h1 class="anim" style="font-size:clamp(28px,3.5vw,44px); margin-bottom:4px;">Proceso de <em>Homologación</em> <span class="oro">con Plazos</span></h1>
+  <p class="anim" style="font-size:12px; color:var(--crema-dimmed); max-width:650px;">Desde el precheck hasta la resolución de la Cruz Roja Suiza (SRK)</p>
+
+  <!-- TIMELINE 4 FASES -->
+  <div class="homolog-timeline anim">
+    <!-- FASE 1 -->
+    <div class="h-phase">
+      <div class="h-phase-icon green">📋</div>
+      <div class="h-phase-card">
+        <span class="h-badge green">Fase 1</span>
+        <div class="h-title">Precheck</div>
+        <div class="h-desc">Recopilar y subir documentación digital a la SRK:</div>
+        <div class="h-actions">
+          <div class="h-action"><span class="h-check green">✓</span> Título de Fisioterapia</div>
+          <div class="h-action"><span class="h-check green">✓</span> Certificado de no sanciones</div>
+          <div class="h-action"><span class="h-check green">✓</span> DNI</div>
+          <div class="h-action"><span class="h-check green">✓</span> CV traducido por ti</div>
+          <div class="h-action"><span class="h-check green">✓</span> Justificante de pago</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <span class="h-deadline ideal">⚡ Idóneo: 1 semana</span>
+          <span class="h-deadline max">⏳ Máximo: 30 días</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FASE 2 -->
+    <div class="h-phase">
+      <div class="h-phase-icon yellow">📝</div>
+      <div class="h-phase-card">
+        <span class="h-badge yellow">Fase 2</span>
+        <div class="h-title">Formulario Inicial</div>
+        <div class="h-desc">Tras recibir el <strong style="color:var(--crema);">Precheck Positive</strong>, te llegará un formulario online. Rellénalo con tus datos de envío.</div>
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <span class="h-deadline ideal">⚡ Idóneo: 2 días tras recibirlo</span>
+          <span class="h-deadline max">⏳ Máximo: 45 días</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FASE 3 -->
+    <div class="h-phase">
+      <div class="h-phase-icon orange">📦</div>
+      <div class="h-phase-card">
+        <span class="h-badge orange">Fase 3</span>
+        <div class="h-title">Recopilación y Envío Físico</div>
+        <div class="h-desc">Mientras esperas la carta definitiva (1–1,5 meses), <strong style="color:var(--crema);">recopilar, compulsar y traducir</strong> el resto de documentos. Envío por carta certificada:</div>
+        <div class="h-actions">
+          <div class="h-action"><span class="h-check orange">✓</span> Docs compulsados (notario)</div>
+          <div class="h-action"><span class="h-check orange">✓</span> Docs traducidos jurados</div>
+          <div class="h-action"><span class="h-check orange">✓</span> Documentos originales</div>
+          <div class="h-action"><span class="h-check orange">✓</span> Formulario final</div>
+          <div class="h-action"><span class="h-check orange">✓</span> Justificante de pago SRK</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <span class="h-deadline ideal">⚡ Idóneo: 2 meses desde precheck</span>
+          <span class="h-deadline max">⏳ Máximo: 90 días</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FASE 4 -->
+    <div class="h-phase">
+      <div class="h-phase-icon red">🏛️</div>
+      <div class="h-phase-card">
+        <span class="h-badge red">Fase 4</span>
+        <div class="h-title">Respuesta de Suiza</div>
+        <div class="h-desc">Esperar la resolución oficial de la SRK: <strong style="color:var(--crema);">homologación parcial</strong>, <strong style="color:var(--crema);">directa</strong> o <strong style="color:var(--crema);">medidas compensatorias</strong>.</div>
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <span class="h-deadline wait">🕐 Espera: 3 a 5 meses</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM: RESUMEN -->
+  <div class="homolog-bottom anim" style="grid-template-columns:1fr; max-width:600px;">
+    <div class="h-panel">
+      <h3>💡 Tiempo Total Estimado</h3>
+      <div class="h-routes">
+        <div class="h-route fast">
+          <div class="h-route-icon">🚀</div>
+          <div class="h-route-label">Ruta Rápida</div>
+          <div class="h-route-time">4–6 meses</div>
+          <div class="h-route-detail">4–6 meses de espera SRK</div>
+        </div>
+        <div class="h-route slow">
+          <div class="h-route-icon">🐢</div>
+          <div class="h-route-label">Ruta Lenta</div>
+          <div class="h-route-time">6–8 meses</div>
+          <div class="h-route-detail">4–6 meses de espera SRK</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
@@ -1618,7 +1950,7 @@ h2 {
   const animMap = {
     s1:'fade-up', s1b:'fade-up', s1c:'from-left', s2:'from-left', s3:'from-right', s4:'zoom',
     s5:'from-left', s6:'fade-up-slow', s7:'from-right', s8:'zoom',
-    s9:'from-left', s10:'stagger', s11:'from-right', s12:'zoom',
+    s8b:'fade-up', s9:'from-left', s10:'stagger', s11:'from-right', s12:'zoom',
     s13:'from-left', s14:'stagger', s15:'from-right', s16:'from-left',
     s17:'fade-up-slow', s18:'from-right', s19:'zoom', s20a:'fade-up', s20b:'from-left', s20:'fade-up', s21:'fade-up'
   };
